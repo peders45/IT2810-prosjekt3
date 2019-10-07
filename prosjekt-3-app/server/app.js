@@ -1,12 +1,33 @@
 const express = require('express');
 const morgan = require ('morgan');
-
 const app = express();
-
 const testRoutes = require('./api/routes/test');
 const test2Routes = require('./api/routes/test2')
+const mongoose = require('mongoose');
+
+
+const url = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOSTNAME}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}?authSource=admin`;
+console.log(url);
+
+mongoose.connect(url, {useUnifiedTopology: true});
 
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+app.use((req, res, next)=>{
+    req.header('Access-Control-Allow-Origin', '*');
+    req.header(
+        'Access-Control-Allow-Headers', 
+        'Origin, X-Request-With, Content-Type, Accept, Authorization'
+    );
+    if(req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Headers', 'PUT, POST, PATCH, DELETE, GET');
+        return res.status(200).json({});
+    }
+
+    next();
+
+});
 
 app.use('/test', testRoutes);
 app.use('/test2', test2Routes);

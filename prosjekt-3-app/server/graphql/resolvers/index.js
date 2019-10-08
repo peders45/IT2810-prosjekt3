@@ -38,10 +38,10 @@ module.exports = {
                 review: args.reviewInput.review,
                 menuItem: item
             });
-            
+
             const result = await review.save();
             item.reviews.push(review);
-            item.save();
+            await item.save();
             return {...result._doc, _id: result.id};
         }catch(err){
             throw err;

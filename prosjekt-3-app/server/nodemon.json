@@ -4,6 +4,6 @@
         "MONGO_PASSWORD": "password",
         "MONGO_HOSTNAME": "it2810-56.idi.ntnu.no",
         "MONGO_PORT": "27017",
-        "MONGO_DB": "test"
+        "MONGO_DB": "project3"
     }
 }

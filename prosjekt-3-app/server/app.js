@@ -62,6 +62,7 @@ app.use('/graphql', graphqlHttp({
             Vitamin_C_percentage_Daily_Value: Int
             Calcium_percentage_Daily_Value: Int
             Iron_percentage_Daily_Value: Int
+            reviews: [Review!]
         }
 
         type Review {
@@ -69,6 +70,7 @@ app.use('/graphql', graphqlHttp({
             name: String!
             score: Int!
             review: String!
+            menuItem: Menu!
         }
 
         type RootQuery {
@@ -94,7 +96,9 @@ app.use('/graphql', graphqlHttp({
     `),
     rootValue: { 
         menu: () => {
-            return Menu.find().exec()
+            return Menu
+            .find()
+            .populate('reviews')
             .then(items => {
                 return items.map( item => {
                     return {...item._doc, _id: item.id};
@@ -119,20 +123,23 @@ app.use('/graphql', graphqlHttp({
         },
         addReview: (args) => {
             const menuId = args.reviewInput.menuItem;
+            const review = new Review({
+                name: args.reviewInput.name,
+                score: args.reviewInput.score,
+                review: args.reviewInput.review,
+                menuItem: menuId
+            });
             return Menu.findById(menuId).then( item => {
                 if(item){
-                    review = new Review({
-                        name: args.reviewInput.name,
-                        score: args.reviewInput.score,
-                        review: args.reviewInput.review,
-                        menuItem: menuId
-                    });
-                    return review.save()
+                    item.reviews.push(review);
+                    return item.save();
                 } else{
                     throw new Error('Menu item does not exist!')
                 }
             })
-            .then(result => {
+            .then( () => {
+                return review.save()
+            }).then( result => {
                 return {...result._doc, _id: result.id};
             })
             .catch(err => {

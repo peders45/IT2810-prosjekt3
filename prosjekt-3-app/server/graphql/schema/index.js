@@ -39,8 +39,14 @@ type Review {
     menuItem: Menu!
 }
 
+input SortInput {
+    sortCategory: String!
+    isLowHigh: Boolean
+}
+
+
 type RootQuery {
-    menu: [Menu!]!
+    menu(first: Int offset: Int categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
     reviews: [Review!]!
 }
 

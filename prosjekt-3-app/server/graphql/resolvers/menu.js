@@ -2,17 +2,14 @@ const Menu = require('../../api/models/menu');
 
 module.exports = {
   menu: async args => {
-      const offset = args.offset ? args.offset : 0;
+    const offset = args.offset ? args.offset : 0;
+    const first = args.first ? args.first : 0;
     try {
-      const data = await Menu.find().populate('reviews');
+      const data = await Menu.find().skip(offset).limit(first).populate('reviews');
       const mappedData = data.map(item => {
         return { ...item._doc, _id: item.id };
       });
-      const dataSliced =
-        args.first === undefined
-          ? mappedData.slice(offset)
-          : mappedData.slice(offset, offset + args.first);
-      return dataSliced;
+      return mappedData;
     } catch (err) {
       throw err;
     }

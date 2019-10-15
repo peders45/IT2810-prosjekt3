@@ -28,7 +28,7 @@ type Menu {
     Vitamin_C_percentage_Daily_Value: Int
     Calcium_percentage_Daily_Value: Int
     Iron_percentage_Daily_Value: Int
-    Score: Int
+    score: Int
     reviews: [Review!]
 }
 

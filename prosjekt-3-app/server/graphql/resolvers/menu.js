@@ -7,14 +7,17 @@ module.exports = {
 
     const categoryMap = () => {
       return args.categories
-        ? args.categories.map(cat => {
-            return { Category: cat };
-          })
+        ? args.categories
         : [];
     };
 
+    console.log(categoryMap())
+
     try {
-      const data = await Menu.find(...categoryMap())
+      const data = await Menu
+        .find()
+        .where('Category')
+        .in(categoryMap())
         .skip(offset)
         .limit(first)
         .populate('reviews');
@@ -22,7 +25,7 @@ module.exports = {
         return { ...item._doc, _id: item.id };
       });
       if(args.minReviewScore){
-        mappedData = mappedData.filter( item => item.score > args.minReviewScore)
+        mappedData = mappedData.filter( item => item.score >= args.minReviewScore)
       }
       if(args.maxCalories){
         mappedData = mappedData.filter( item => parseInt(item.Calories) <= args.maxCalories)

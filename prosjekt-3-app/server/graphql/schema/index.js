@@ -28,6 +28,7 @@ type Menu {
     Vitamin_C_percentage_Daily_Value: Int
     Calcium_percentage_Daily_Value: Int
     Iron_percentage_Daily_Value: Int
+    score: Int
     reviews: [Review!]
 }
 
@@ -39,8 +40,14 @@ type Review {
     menuItem: Menu!
 }
 
+input SortInput {
+    sortCategory: String!
+    isLowHigh: Boolean
+}
+
+
 type RootQuery {
-    menu: [Menu!]!
+    menu(first: Int offset: Int categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
     reviews: [Review!]!
 }
 

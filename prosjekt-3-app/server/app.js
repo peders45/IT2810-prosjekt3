@@ -2,10 +2,6 @@ const express = require('express');
 const morgan = require ('morgan');
 const app = express();
 const mongoose = require('mongoose');
-// const graphqlHttp = require('express-graphql');
-
-// const graphQlSchema = require('./graphql/schema/index');
-// const graphQlResolvers = require('./graphql/resolvers/index');
 
 
 
@@ -32,12 +28,6 @@ app.use((req, res, next)=>{
 
 });
 
-
-// app.use('/graphql', graphqlHttp({
-//     schema: graphQlSchema,
-//     rootValue: graphQlResolvers,
-//     graphiql: true
-// }));
 
 // app.use((req, res, next) => {
 //     const error = new Error('Not found');

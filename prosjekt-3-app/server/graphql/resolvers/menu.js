@@ -11,8 +11,6 @@ module.exports = {
         : [];
     };
 
-    console.log(categoryMap())
-
     try {
       const data = await Menu
         .find()
@@ -29,6 +27,21 @@ module.exports = {
       }
       if(args.maxCalories){
         mappedData = mappedData.filter( item => parseInt(item.Calories) <= args.maxCalories)
+      }
+      if(args.sort){
+        console.log("In Sort")
+        const cat = args.sort.sortCategory
+        if(args.sort.isLowHigh){
+          console.log("High low")
+          mappedData = mappedData.sort((item1, item2) => {
+            return item1[cat] - item2[cat];
+          })
+        }else if(!args.sort.isLowHigh){
+          console.log("Low high")
+          mappedData = mappedData.sort((item1, item2) => {
+            return item2[cat] - item1[cat];
+          })
+        }
       }
       return mappedData;
     } catch (err) {

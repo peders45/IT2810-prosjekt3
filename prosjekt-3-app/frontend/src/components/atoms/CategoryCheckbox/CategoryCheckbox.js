@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CategoryCheckbox.css';
 import '../../../App'
 import { checkCategory, uncheckCategory }  from "../../../state/actions/categoryActions";
@@ -15,7 +15,6 @@ const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
       console.log("Unchecked!", category);
       uncheckCategory(category);
     }
-    //setChecked(checked.includes(value) ? checked.filter(c => c !== value) : [...checked, value]);
   };
 
     return(

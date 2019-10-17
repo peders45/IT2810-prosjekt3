@@ -30,7 +30,6 @@ module.exports = {
 
       const result = await review.save();
       const score = item.score ? ((review.score+(item.score*item.reviews.length))/(item.reviews.length+1)) : review.score;
-      console.log(score)
       item.score = score;
       item.reviews.push(review);
       await item.save();

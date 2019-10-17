@@ -3,7 +3,6 @@ const Menu = require('../../../api/models/menu');
 
 module.exports = {
     addReview: async (Obj, args) => {
-      console.log("review mutation")
       try {
         const menuId = args.reviewInput.menuItem;
         const item = await Menu.findById(menuId);

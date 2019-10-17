@@ -4,11 +4,12 @@ module.exports = {
     menu: async (Obj, args) => {
       const offset = args.offset ? args.offset : 0;
       const first = args.first ? args.first : 0;
+      const searchWord = args.searchWord ? {Item: new RegExp(args.searchWord, "i")} : undefined;
 
       try {
         let mappedData = null;
         if (args.categories) {
-          const data = await Menu.find()
+          const data = await Menu.find(searchWord)
             .where('Category')
             .in(args.categories)
             .skip(offset)
@@ -19,7 +20,7 @@ module.exports = {
             return { ...item._doc, _id: item.id };
           });
         } else {
-          const data = await Menu.find()
+          const data = await Menu.find(searchWord)
             .skip(offset)
             .limit(first)
             .populate('reviews');

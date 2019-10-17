@@ -47,7 +47,7 @@ input SortInput {
 
 
 type Query {
-    menu(first: Int offset: Int categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
+    menu(first: Int offset: Int searchWord: String categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
     reviews: [Review!]!
 }
 

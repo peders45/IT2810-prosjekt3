@@ -4,7 +4,7 @@ const app = require('./app');
 const typeDefs = require('./graphql/schema/index');
 const resolvers = require('./graphql/resolvers/index');
 
-const PORT = process.env.PORt || 3000;
+const PORT = process.env.PORt || 8080;
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.applyMiddleware({ app });

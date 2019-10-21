@@ -1,7 +1,13 @@
-const menuResolver = require('./menu');
-const reviewsResolver = require('./reviews');
+menuQueries = require('./queries/menu');
+reviewQueries = require('./queries/reviews');
+reviewMutations = require('./mutations/reviews');
 
 module.exports = {
-    ...menuResolver,
-    ...reviewsResolver
+    Query:{
+        ...menuQueries,
+        ...reviewQueries
+    },
+    Mutation: {
+       ...reviewMutations 
+    }
 }

@@ -1,6 +1,6 @@
-const {buildSchema} = require('graphql');
+const {  gql } = require('apollo-server-express');
 
-module.exports = buildSchema(`
+module.exports = gql`
 
 type Menu {
     _id: ID!
@@ -46,8 +46,8 @@ input SortInput {
 }
 
 
-type RootQuery {
-    menu(first: Int offset: Int categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
+type Query {
+    menu(first: Int offset: Int searchWord: String categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
     reviews: [Review!]!
 }
 
@@ -58,12 +58,6 @@ input ReviewInput {
     menuItem: ID!
 }
 
-type RootMutation {
+type Mutation {
     addReview(reviewInput: ReviewInput!): Review!
-}
-
-schema {
-    query: RootQuery
-    mutation: RootMutation
-}
-`)
+}`

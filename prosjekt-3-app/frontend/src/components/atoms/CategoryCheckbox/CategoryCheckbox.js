@@ -9,10 +9,8 @@ const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
 
   const handleChange = (event) => {
     if(event.target.checked) {
-      console.log("Checked!", category);
       checkCategory(category);
     } else {
-      console.log("Unchecked!", category);
       uncheckCategory(category);
     }
   };

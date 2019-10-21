@@ -11,14 +11,14 @@ const SearchField = ({ searchForItem }) => {
 
     return(
         <div>
-          <label>Search for item: </label>
           <input
+          className="input"
           name="search"
           type="text"
-          placeholder="Search..."
+          placeholder="Search for menu items..."
           onChange={(event) => setInput(event.target.value)}
           />
-          <input type="button" onClick={() => searchForItem(input)} value="submit"/>
+          <input type="button" className="button" onClick={() => searchForItem(input)} value="Search"/>
         </div>
     );
 };

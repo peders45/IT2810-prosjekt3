@@ -1,0 +1,14 @@
+.skjemaelement__input {
+  margin: 20px;
+  margin-left: 40px;
+  margin-top: 28px;
+  width: 220px;
+  height: 25px;
+  font-size: 14px;
+}
+
+.skjemaelement__input:focus {
+    outline: none !important;
+    border:2px solid gold;
+    background-color: white;
+}

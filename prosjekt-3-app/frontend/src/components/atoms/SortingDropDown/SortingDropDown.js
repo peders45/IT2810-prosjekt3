@@ -9,14 +9,12 @@ import { Select } from 'nav-frontend-skjema';
 const SortingDropDown = ({ sortResult }) => {
     return(
       <div>
-          <Select className="dropDownContainer" label="" onChange={(event) => sortResult(event.target.value)}>
-            <option value=''>Sorter etter:</option>
-            <option value='calories_HL'>Kalorier (høy-lav)</option>
-            <option value='calories_LH'>Kalorier (lav-høy)</option>
-            <option value='servingsize_HL'>Porsjonsstørrelse (høy-lav)</option>
-            <option value='servingsize_LH'>Porsjonsstørrelse (lav-høy)</option>
-            <option value='rating_HL'>Rating (høy-lav)</option>
-            <option value='rating_LH'>Rating (lav-høy)</option>
+          <Select className="dropDownContainer" label="" onChange={(event) => sortResult(event.target.value)} bredde="s">
+            <option value=''>Sort by:</option>
+            <option value='calories_HL'>Calories (high-low)</option>
+            <option value='calories_LH'>Calories (low-high)</option>
+            <option value='rating_HL'>Ratings (high-low)</option>
+            <option value='rating_LH'>Ratings (low-high)</option>
           </Select>
       </div>
     );

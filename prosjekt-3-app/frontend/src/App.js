@@ -12,7 +12,7 @@ class App extends React.Component{
         <FilterSection />
         <DisplaySection />
         <SortingDropDown />
-
+      
       </div>
     );
   }

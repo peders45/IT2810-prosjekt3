@@ -1,0 +1,40 @@
+.MuiTypography-root.makeStyles-heading-58.MuiTypography-body1 {
+  text-align: left;
+}
+
+#wrapper {
+  margin: 5px;
+}
+
+#panel1a-header {
+  border: none;
+  color: black;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  width: 40vw;
+  height: 30px;
+}
+
+#panel1a-content > div {
+   background-color: #FFF3B4;
+   width: auto;
+   margin: 0;
+ }
+
+ #panel1a-content > div > p {
+   font-size: 13px;
+   text-align: left;
+   margin-right: 50px;
+ }
+
+ #panel1a-content > div > div > svg {
+   width: 260px;
+ }
+
+#panel1a-content > div > div > h4 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

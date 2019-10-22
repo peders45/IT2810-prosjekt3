@@ -5,3 +5,8 @@
 .MuiSlider-track, .MuiSlider-rail, .MuiSlider-trackInverted {
   color: red;
 }
+
+#root > div > div.filterSection > div.sliderSection > div:nth-child(1) > span > span.MuiSlider-rail {
+  color: #b6bce2;
+  opacity: 1;
+}

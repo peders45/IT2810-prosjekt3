@@ -9,17 +9,18 @@ const MENU_FAILED = "MENU_FAILED";
 const GET_MENU = gql`
   query ($searchWord: String!) {
     menu(searchWord:$searchWord){
-      Item,
-      Category,
-      Serving_Size,
-      Calories,
-      Carbohydrates,
-      Sugars
+      Item
+      Category
+      score
+      Calories
+      Carbohydrates
       Protein
-      score,
-      Total_Fat_percentage_Daily_Value,
-      Cholesterol_percentage_Daily_Value,
-      Sodium_percentage_Daily_Value,
+      Total_Fat
+      Saturated_Fat
+      Sugars
+      Total_Fat_percentage_Daily_Value
+      Cholesterol_percentage_Daily_Value
+      Sodium_percentage_Daily_Value
       Calcium_percentage_Daily_Value
     }
   }

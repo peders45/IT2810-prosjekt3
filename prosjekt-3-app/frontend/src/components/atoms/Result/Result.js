@@ -43,7 +43,7 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading}>{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading}>
-            Category: {menuItem.Category}  |  Rating: {menuItem.Score}★
+            Category: {menuItem.Category}  |  Rating: {menuItem.score}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails}>
@@ -51,15 +51,15 @@ const Result = ({menuItem}) => {
             <br />
             Calories: {menuItem.Calories}
             <br /><br />
+            Carbohydrates: {menuItem.Carbohydrates}
+            <br /><br />
+            Protein: {menuItem.Protein}
+            <br /><br />
             Total fat: {menuItem.Total_Fat}
             <br /><br />
             Saturated fat: {menuItem.Saturated_Fat}
             <br /><br />
-            Sodium: {menuItem.Sodium}
-            <br /><br />
             Sugars: {menuItem.Sugars}
-            <br /><br />
-            Protein: {menuItem.Protein}
           </Typography>
           <div>
           <h4>Percent of recommended daily values</h4>

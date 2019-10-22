@@ -1,5 +1,5 @@
 const ratingReducer = (state = {
-    rateValue: "",
+    rateValue: 0,
     lastValues: []
   }, action) => {
   switch (action.type) {

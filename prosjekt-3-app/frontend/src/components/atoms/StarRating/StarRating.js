@@ -2,30 +2,49 @@ import React from 'react';
 import './StarRating.css';
 import '../../../App'
 import { rateMenu }  from "../../../state/actions/ratingActions";
-import ratingReducer  from "../../../state/reducers/ratingReducer";
 import { connect } from 'react-redux'
-import StarRatingComponent from 'react-star-rating-component';
+import { withStyles } from '@material-ui/core/styles';
+import Rating from '@material-ui/lab/Rating';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-const StarRating = ({rateMenu}) => {    
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#ff6d75',
+  },
+  iconHover: {
+    color: '#ff3d47',
+  },
+})(Rating);
+
+const StarRating = ({rateMenu, rateValue}) => {
     return(
-      <h2>
-        <StarRatingComponent 
-          name="starsMenu"
-          emptyStarColor="#aaa2a2"
-          starCount={5}
-          value={ratingReducer.rateValue}
-          onStarClick={(value) => rateMenu(value)}
-        />
-      </h2>
+      <div>
+        <Box component="fieldset" mb={3} borderColor="transparent">
+        <Typography component="legend">Score: {rateValue}</Typography>
+          <StyledRating
+            name="customized-color"
+            icon={<FavoriteIcon fontSize="inherit" />}
+            max={5}
+            precision={1}
+            value={rateValue}
+            onChange={(event, value) => {rateMenu(value)}}
+            size="small"
+            //disabled={true}
+            //readOnly={true}
+            />
+          </Box>
+      </div>
     );
-};
-
+  };
+  
 const mapDispatchToProps = {
   rateMenu
 };
 
 const mapStateToProps = (state) => ({
-  ratingReducer
+  rateValue: state.ratingReducer.rateValue
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StarRating)

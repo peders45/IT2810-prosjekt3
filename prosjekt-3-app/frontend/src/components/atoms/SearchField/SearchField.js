@@ -18,7 +18,7 @@ const SearchField = ({ searchForItem }) => {
           placeholder="Search for menu items..."
           onChange={(event) => setInput(event.target.value)}
           />
-          <input type="button" className="button" onClick={() => searchForItem(input)} value="Search"/>
+          <input type="button" className="searchButton" onClick={() => searchForItem(input)} value="Search"/>
         </div>
     );
 };

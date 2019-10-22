@@ -32,24 +32,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Result = () => {
+const Result = ({menuItem}) => {
   const classes = useStyles();
-  var menuItem = {
-    Category: "Breakfast",
-    Item: "Sausage McMuffin",
-    Calories: 370,
-    Total_Fat: 35,
-    Sodium: 780,
-    Sugars: 2,
-    Protein: 14,
-    Saturated_Fat: 8,
-    Score: 3.8,
-    Total_Fat_percentage_Daily_Value: 40,
-    Cholesterol_percentage_Daily_Value: 67,
-    Sodium_percentage_Daily_Value: 18,
-    Calcium_percentage_Daily_Value: 3,
-  };
-
+  console.log(menuItem.Cholesterol_percentage_Daily_Value)
   return (
     <div className={classes.root} id="wrapper">
       <ExpansionPanel className={classes.expansionPanel}>
@@ -90,10 +75,10 @@ const Result = () => {
              // data
              {
                data: {
-                 Total_Fat_percentage_Daily_Value: JSON.parse(menuItem.Total_Fat_percentage_Daily_Value)/100,
-                 Cholesterol_percentage_Daily_Value: JSON.parse(menuItem. Cholesterol_percentage_Daily_Value)/100,
-                 Sodium_percentage_Daily_Value: JSON.parse(menuItem.Sodium_percentage_Daily_Value)/100,
-                 Calcium_percentage_Daily_Value: JSON.parse(menuItem.Calcium_percentage_Daily_Value)/100,
+                 Total_Fat_percentage_Daily_Value: menuItem.Total_Fat_percentage_Daily_Value/100,
+                 Cholesterol_percentage_Daily_Value: menuItem.Cholesterol_percentage_Daily_Value/100,
+                 Sodium_percentage_Daily_Value: menuItem.Sodium_percentage_Daily_Value/100,
+                 Calcium_percentage_Daily_Value: menuItem.Calcium_percentage_Daily_Value/100,
 
              },
                meta: { color: "red" }

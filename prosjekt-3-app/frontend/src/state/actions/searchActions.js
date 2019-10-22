@@ -16,7 +16,11 @@ const GET_MENU = gql`
       Carbohydrates,
       Sugars
       Protein
-      score
+      score,
+      Total_Fat_percentage_Daily_Value,
+      Cholesterol_percentage_Daily_Value,
+      Sodium_percentage_Daily_Value,
+      Calcium_percentage_Daily_Value
     }
   }
 `;

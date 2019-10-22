@@ -12,7 +12,7 @@ switch (action.type) {
   case "MENU_RECEIVED":
     return state = {
       ...state,
-      menus: action.payload,
+      menus: action.payload.data.menu,
       status: "received"
     };
     case "MENU_FAILED":

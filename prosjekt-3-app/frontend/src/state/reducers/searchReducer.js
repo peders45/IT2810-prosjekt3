@@ -1,17 +1,29 @@
 const searchReducer = (state = {
-    searchWord: "",
-    lastValues: []
-  }, action) => {
-  switch (action.type) {
-    case "SEARCH":
-      return state = {
-        ...state,
-        searchWord: action.payload,
-        lastValues: [...state.lastValues, action.payload]
-      };
-    default:
-      return state;
-  }
+  menus: [],
+  status: "",
+  error: []
+}, action) => {
+switch (action.type) {
+  case "MENU_REQUESTED":
+    return state = {
+      ...state,
+      status: "waiting"
+    };
+  case "MENU_RECEIVED":
+    return state = {
+      ...state,
+      menus: action.payload,
+      status: "received"
+    };
+    case "MENU_FAILED":
+    return state = {
+      ...state,
+      error: action.payload,
+      status: "received"
+    };
+  default:
+    return state;
+}
 };
 
 export default searchReducer;

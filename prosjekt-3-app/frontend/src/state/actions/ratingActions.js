@@ -32,7 +32,7 @@ export function rateMenu(rateValue, menuID) {
 
     .then(data =>{
       const newState = state.searchReducer.menus.map(menu => {
-        if(menu.score !=null && menu._id === menuID){
+        if(menu._id === menuID){
           return {...menu, score: data.data.addReview.score}
         }
         return menu;

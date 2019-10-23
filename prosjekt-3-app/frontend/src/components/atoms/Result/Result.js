@@ -87,7 +87,7 @@ const Result = ({menuItem}) => {
            size={200}
          />
          </div>
-         <div id="stars">
+         <div className="stars">
            <StarRating key={menuItem._id} menuID={menuItem._id} />
          </div>
         </ExpansionPanelDetails>

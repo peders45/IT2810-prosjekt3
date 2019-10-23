@@ -25,12 +25,13 @@ const StarRating = ({rateMenu, menuID}) => {
       <Box component="fieldset" mb={3} borderColor="transparent">
       <Typography component="legend">Score: {value}</Typography>
         <StyledRating
-          name="customized-color"
+          name={menuID}
           icon={<FavoriteIcon fontSize="inherit" />}
           max={5}
           precision={1}
           value={value}
           onChange={(event, value) => {
+            console.log(menuID)
             setValue(value)
             rateMenu(value, menuID)
           }}

@@ -39,7 +39,7 @@
   font-size: 14px;
 }
 
-#stars {
+.stars {
   display: flex;
   flex-direction: column;
   justify-content: center;

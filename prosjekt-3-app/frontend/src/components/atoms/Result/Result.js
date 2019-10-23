@@ -7,6 +7,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
+import StarRating from '../StarRating/StarRating';
 //import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import RadarChart from 'react-svg-radar-chart';
@@ -34,7 +35,6 @@ const useStyles = makeStyles(theme => ({
 
 const Result = ({menuItem}) => {
   const classes = useStyles();
-  console.log(menuItem.Cholesterol_percentage_Daily_Value)
   return (
     <div className={classes.root} id="wrapper">
       <ExpansionPanel className={classes.expansionPanel}>
@@ -86,6 +86,10 @@ const Result = ({menuItem}) => {
            ]}
            size={200}
          />
+         </div>
+         <div id="stars">
+           {/* Må få sendt med "menuItem._id" til starRating */}
+           <StarRating/>
          </div>
         </ExpansionPanelDetails>
       </ExpansionPanel>

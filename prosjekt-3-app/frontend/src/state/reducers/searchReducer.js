@@ -1,9 +1,15 @@
 const searchReducer = (state = {
+  searchWord: "",
   menus: [],
   status: "",
   error: []
 }, action) => {
 switch (action.type) {
+  case "SEARCHWORD":
+      return state = {
+        ...state,
+        searchWord: action.payload
+      };
   case "MENU_REQUESTED":
     return state = {
       ...state,

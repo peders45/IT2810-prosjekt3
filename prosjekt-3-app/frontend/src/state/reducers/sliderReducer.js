@@ -1,5 +1,5 @@
 const sliderReducer = (state = {
-    topValue: "",
+    topValue: 1880,
     bottomValue: "",
     lastValues: []
   }, action) => {

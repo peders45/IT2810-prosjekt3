@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 const GET_MENU = gql`
   query ($searchWord: String, $maxCalories: Int) {
     menu(searchWord:$searchWord, maxCalories: $maxCalories){
+      _id
       Item
       Category
       score

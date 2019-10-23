@@ -88,8 +88,7 @@ const Result = ({menuItem}) => {
          />
          </div>
          <div id="stars">
-           {/* Må få sendt med "menuItem._id" til starRating */}
-           <StarRating/>
+           <StarRating key={menuItem._id} menuID={menuItem._id} />
          </div>
         </ExpansionPanelDetails>
       </ExpansionPanel>

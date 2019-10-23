@@ -13,19 +13,36 @@ switch (action.type) {
   case "MENU_REQUESTED":
     return state = {
       ...state,
-      status: "waiting"
+      status: "menu waiting"
     };
   case "MENU_RECEIVED":
     return state = {
       ...state,
       menus: action.payload.data.menu,
-      status: "received"
+      status: "menu received"
     };
     case "MENU_FAILED":
     return state = {
       ...state,
       error: action.payload,
-      status: "received"
+      status: "menu failed"
+    };
+    case "RATING_REQUESTED":
+      return state = {
+        ...state,
+        status: "rating waiting"
+    };
+    case "RATING_RECEIVED":
+      return state = {
+        ...state,
+        menus: action.payload,
+        status: "rating received"
+    };
+    case "RATING_FAILED":
+    return state = {
+      ...state,
+      error: action.payload,
+      status: "rating failed"
     };
   default:
     return state;

@@ -5,7 +5,7 @@ import { rateMenu }  from "../../../state/actions/ratingActions";
 import { connect } from 'react-redux'
 
 const ResultSection = ({menuItems}) => {
-  console.log(menuItems)
+  //console.log(menuItems)
   return(
     <div className="resultSection">
       {menuItems.map((menuItem, i) =><Result menuItem={menuItem} key={"r"+i}/>)}

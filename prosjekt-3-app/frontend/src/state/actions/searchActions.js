@@ -14,28 +14,28 @@ export function searchForItem(searchWord) {
     dispatch({
       type: SEARCHWORD,
         payload: searchWord
-      })
+    })
 
-      dispatch({
-        type: MENU_REQUESTED,
-      })
+    dispatch({
+      type: MENU_REQUESTED,
+    })
 
-      client.query({
-        query: GET_MENU,
-        variables: {
-        searchWord: searchWord,
-        maxCalories: state.sliderReducer.topValue       
-        }
-      })
-  
-      .then(data => dispatch({
-        type: MENU_RECEIVED,
-        payload: data
-      }))
-  
-      .catch(error => dispatch({
-        type: MENU_FAILED,
-        payload: error
-      }))
-    }
+    client.query({
+      query: GET_MENU,
+      variables: {
+      searchWord: searchWord,
+      maxCalories: state.sliderReducer.topValue       
+      }
+    })
+
+    .then(data => dispatch({
+      type: MENU_RECEIVED,
+      payload: data
+    }))
+
+    .catch(error => dispatch({
+      type: MENU_FAILED,
+      payload: error
+    }))
   }
+}

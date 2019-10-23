@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import './SearchField.css';
 import '../../../App'
 import { searchForItem }  from "../../../state/actions/searchActions";
-import searchReducer  from "../../../state/reducers/searchReducer";
 import { connect } from 'react-redux'
 
 const SearchField = ({ searchForItem }) => {
-
   const [ input, setInput ] = useState([]);
 
     return(
@@ -28,8 +26,4 @@ const mapDispatchToProps = {
   searchForItem
  };
 
-const mapStateToProps = (state) => ({
-  searchReducer
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchField)
+export default connect(null, mapDispatchToProps)(SearchField)

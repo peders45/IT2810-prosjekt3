@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './StarRating.css';
 import '../../../App'
 import { rateMenu }  from "../../../state/actions/ratingActions";
@@ -18,33 +18,38 @@ const StyledRating = withStyles({
   },
 })(Rating);
 
-const StarRating = ({rateMenu, rateValue}) => {
+const StarRating = ({rateMenu, menuID}) => {
+    const [value, setValue] = useState(0);
     return(
-      <div>
-        <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend">Score: {rateValue}</Typography>
-          <StyledRating
-            name="customized-color"
-            icon={<FavoriteIcon fontSize="inherit" />}
-            max={5}
-            precision={1}
-            value={rateValue}
-            onChange={(event, value) => {rateMenu(value)}}
-            size="small"
-            //disabled={true}
-            //readOnly={true}
-            />
-          </Box>
-      </div>
-    );
-  };
+    <div>
+      <Box component="fieldset" mb={3} borderColor="transparent">
+      <Typography component="legend">Score: {value}</Typography>
+        <StyledRating
+          name={menuID}
+          icon={<FavoriteIcon fontSize="inherit" />}
+          max={5}
+          precision={1}
+          value={value}
+          onChange={(event, value) => {
+            console.log(menuID)
+            setValue(value)
+            rateMenu(value, menuID)
+          }}
+          size="small"
+          //disabled={true}
+          //readOnly={true}
+        />
+      </Box>
+    </div>
+  );
+};
   
 const mapDispatchToProps = {
   rateMenu
 };
 
-const mapStateToProps = (state) => ({
+/* const mapStateToProps = (state) => ({
   rateValue: state.ratingReducer.rateValue
-});
+}); */
 
-export default connect(mapStateToProps, mapDispatchToProps)(StarRating)
+export default connect(null, mapDispatchToProps)(StarRating)

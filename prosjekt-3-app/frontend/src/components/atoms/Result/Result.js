@@ -7,6 +7,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
+import StarRating from '../StarRating/StarRating';
 //import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import RadarChart from 'react-svg-radar-chart';
@@ -34,7 +35,6 @@ const useStyles = makeStyles(theme => ({
 
 const Result = ({menuItem}) => {
   const classes = useStyles();
-  console.log(menuItem.Cholesterol_percentage_Daily_Value)
   return (
     <div className={classes.root} id="wrapper">
       <ExpansionPanel className={classes.expansionPanel}>
@@ -43,7 +43,7 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading}>{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading}>
-            Category: {menuItem.Category}  |  Rating: {menuItem.Score}★
+            Category: {menuItem.Category}  |  Rating: {menuItem.score}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails}>
@@ -51,15 +51,15 @@ const Result = ({menuItem}) => {
             <br />
             Calories: {menuItem.Calories}
             <br /><br />
+            Carbohydrates: {menuItem.Carbohydrates}
+            <br /><br />
+            Protein: {menuItem.Protein}
+            <br /><br />
             Total fat: {menuItem.Total_Fat}
             <br /><br />
             Saturated fat: {menuItem.Saturated_Fat}
             <br /><br />
-            Sodium: {menuItem.Sodium}
-            <br /><br />
             Sugars: {menuItem.Sugars}
-            <br /><br />
-            Protein: {menuItem.Protein}
           </Typography>
           <div>
           <h4>Percent of recommended daily values</h4>
@@ -86,6 +86,9 @@ const Result = ({menuItem}) => {
            ]}
            size={200}
          />
+         </div>
+         <div className="stars">
+           <StarRating key={menuItem._id} menuID={menuItem._id} />
          </div>
         </ExpansionPanelDetails>
       </ExpansionPanel>

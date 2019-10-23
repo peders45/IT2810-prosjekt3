@@ -5,7 +5,6 @@ import searchReducer from './state/reducers/searchReducer';
 import categoryReducer from './state/reducers/categoryReducer';
 import sortingReducer from './state/reducers/sortingReducer';
 import sliderReducer from './state/reducers/sliderReducer';
-import ratingReducer from './state/reducers/ratingReducer';
 import thunk from 'redux-thunk';
 
 const store = createStore(
@@ -14,7 +13,6 @@ const store = createStore(
     categoryReducer,
     sortingReducer,
     sliderReducer,
-    ratingReducer
   }),
   composeWithDevTools(
   applyMiddleware(logger, thunk))

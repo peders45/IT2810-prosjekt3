@@ -3,6 +3,8 @@ import gql from 'graphql-tag';
 const queries = {
   GET_MENU: gql`
   query (
+    $first: Int!,
+    $offset: Int!,
     $searchWord: String, 
     $categories: [String!],
     $minReviewScore: Int,
@@ -13,9 +15,13 @@ const queries = {
     categories:$categories, 
     minReviewScore:$minReviewScore, 
     maxCalories: $maxCalories,
-    sort: $sort)
+    sort: $sort,
+    first: $first,
+    offset: $offset
+    )
   {
-    _id
+    menus{
+      _id
     Item
     Category
     score
@@ -29,6 +35,8 @@ const queries = {
     Cholesterol_percentage_Daily_Value
     Sodium_percentage_Daily_Value
     Calcium_percentage_Daily_Value
+    }
+    count
   }
 }`,
   ADD_RATING: gql`

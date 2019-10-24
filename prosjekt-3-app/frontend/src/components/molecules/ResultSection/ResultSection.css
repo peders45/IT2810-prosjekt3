@@ -1,0 +1,19 @@
+.nextAndPrevButton{
+  margin-left: 5px;
+  background-color: red;
+  border: none;
+  color: gold;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  min-width: 10vw;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.nextAndPrevButton:hover{
+    cursor: pointer;
+  }

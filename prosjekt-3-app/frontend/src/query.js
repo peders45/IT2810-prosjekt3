@@ -6,12 +6,14 @@ const queries = {
     $searchWord: String, 
     $categories: [String!],
     $minReviewScore: Int,
-    $maxCalories: Int) {
+    $maxCalories: Int,
+    $sort: SortInput) {
   menu(
     searchWord:$searchWord,
     categories:$categories, 
     minReviewScore:$minReviewScore, 
-    maxCalories: $maxCalories)
+    maxCalories: $maxCalories,
+    sort: $sort)
   {
     _id
     Item

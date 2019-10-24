@@ -1,7 +1,6 @@
 import React from 'react';
 import './ResultSection.css';
 import Result from '../../atoms/Result/Result';
-import { rateMenu }  from "../../../state/actions/ratingActions";
 import { connect } from 'react-redux'
 
 const ResultSection = ({menuItems}) => {

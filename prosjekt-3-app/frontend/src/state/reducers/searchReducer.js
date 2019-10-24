@@ -4,7 +4,8 @@ const searchReducer = (state = {
   category: [],
   sliderMaxCalories: 1880,
   sliderRating: 0,
-  sortValue: "",
+  sortCategory: "",
+  sortValue: null,
   status: "",
   error: []
 }, action) => {
@@ -62,17 +63,18 @@ switch (action.type) {
     case "SLIDER_CALORIES":
       return state = {
         ...state,
-        sliderMaxCalories: action.payload,
+        sliderMaxCalories: action.payload
       };
     case "SLIDER_RATING":
       return state = {
         ...state,
-        sliderRating: action.payload,
+        sliderRating: action.payload
       };
     case "SORT":
       return state = {
         ...state,
-        sortValue: action.payload,
+        sortCategory: action.payload.sortCategory,
+        sortValue: action.payload.sortValue
       };
   default:
     return state;

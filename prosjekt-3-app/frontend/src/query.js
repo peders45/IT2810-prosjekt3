@@ -3,6 +3,8 @@ import gql from 'graphql-tag';
 const queries = {
   GET_MENU: gql`
   query (
+    $first: Int!,
+    $offset: Int!,
     $searchWord: String, 
     $categories: [String!],
     $minReviewScore: Int,
@@ -13,7 +15,10 @@ const queries = {
     categories:$categories, 
     minReviewScore:$minReviewScore, 
     maxCalories: $maxCalories,
-    sort: $sort)
+    sort: $sort,
+    first: $first,
+    offset: $offset
+    )
   {
     _id
     Item

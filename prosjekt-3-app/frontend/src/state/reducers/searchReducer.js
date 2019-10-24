@@ -7,9 +7,16 @@ const searchReducer = (state = {
   sortCategory: "",
   sortValue: null,
   status: "",
+  first: 9,
+  offset: 0,
   error: []
 }, action) => {
 switch (action.type) {
+  case "PAGINATION":
+    return state = {
+      ...state,
+      offset: action.payload
+    };
   case "SEARCHWORD":
     return state = {
       ...state,

@@ -5,6 +5,7 @@ import queries from '../../query';
 
 export function searchForItem(searchWord) {
   const state = store.getState();
+
   return function(dispatch) {
     dispatch({
       type: actionTypes.SEARCHWORD,
@@ -18,6 +19,8 @@ export function searchForItem(searchWord) {
       query: queries.GET_MENU,
       variables: {
       searchWord: searchWord,
+      categories: categories, 
+      minReviewScore: state.searchReducer.sliderRating,
       maxCalories: state.searchReducer.sliderMaxCalories       
       }
     })

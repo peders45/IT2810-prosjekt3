@@ -5,15 +5,15 @@ import CategoryCheckbox from '../../atoms/CategoryCheckbox/CategoryCheckbox'
 const CategorySection = () => {
   return(
     <div className="categorySection">
-      <CategoryCheckbox category="Breakfast" />
-      <CategoryCheckbox category="Beef & pork" />
-      <CategoryCheckbox category="Chicken & fish" />
-      <CategoryCheckbox category="Snacks & sides" />
-      <CategoryCheckbox category="Salads" />
-      <CategoryCheckbox category="Beverages" />
-      <CategoryCheckbox category="Desserts" />
-      <CategoryCheckbox category="Coffee & tea" />
-      <CategoryCheckbox category="Smoothies & shakes" />
+      <CategoryCheckbox categoryShown="Breakfast" categoryQuery="Breakfast" />
+      <CategoryCheckbox categoryShown="Beef & pork" categoryQuery="Beef_&_Pork" />
+      <CategoryCheckbox categoryShown="Chicken & fish" categoryQuery="Chicken_&_Fish" />
+      <CategoryCheckbox categoryShown="Snacks & sides" categoryQuery="Snacks_&_Sides" />
+      <CategoryCheckbox categoryShown="Salads" categoryQuery="Salads" />
+      <CategoryCheckbox categoryShown="Beverages" categoryQuery="Beverages" />
+      <CategoryCheckbox categoryShown="Desserts" categoryQuery="Desserts" />
+      <CategoryCheckbox categoryShown="Coffee & tea" categoryQuery="Coffee_&_Tea" />
+      <CategoryCheckbox categoryShown="Smoothies & shakes" categoryQuery="Smoothies_&_Shakes" />
     </div>
   )
 }

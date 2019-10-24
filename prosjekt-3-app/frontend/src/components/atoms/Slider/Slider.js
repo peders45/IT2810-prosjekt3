@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import { connect } from 'react-redux'
+import { searchForItem }  from "../../../state/actions/searchActions";
 
 const useStyles = makeStyles({
   root: {
@@ -17,7 +18,7 @@ function valuetext(value) {
   return `${value}`;
 }
 
-const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, track, defaultValue, max, min} ) => {
+const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min} ) => {
   const classes = useStyles();
 
   const handleChange = (event, value) => {
@@ -27,6 +28,7 @@ const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, track, d
     else {
       setSliderRating(value);
     }
+    searchForItem(searchWord)
   };
 
   return (
@@ -52,11 +54,12 @@ const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, track, d
 
 const mapDispatchToProps = {
   setSliderCalories,
-  setSliderRating
+  setSliderRating,
+  searchForItem
  };
 
 const mapStateToProps = (state) => ({
-  
+  searchWord: state.searchReducer.searchWord
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RangeSlider)

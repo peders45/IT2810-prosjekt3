@@ -1,6 +1,7 @@
 import gql from 'graphql-tag';
 
-const GET_MENU = gql`
+const queries = {
+  GET_MENU: gql`
   query ($searchWord: String, $maxCalories: Int) {
     menu(searchWord:$searchWord, maxCalories: $maxCalories){
       _id
@@ -18,7 +19,13 @@ const GET_MENU = gql`
       Sodium_percentage_Daily_Value
       Calcium_percentage_Daily_Value
     }
-  }
-`;
+  }`,
+  ADD_RATING: gql`
+  mutation AddStar($score: Int!, $menuItem: String!) {
+    addReview(score: $score, menuItem: $menuItem) {
+        score
+    }
+  }`
+}
 
-export default GET_MENU;
+export default queries;

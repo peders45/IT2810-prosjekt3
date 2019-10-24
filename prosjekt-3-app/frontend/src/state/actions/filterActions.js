@@ -1,6 +1,7 @@
 import client from '../../setupApolloClient';
 import gql from 'graphql-tag';
 import store from '../../store'
+//import GET_MENU from '../../query';
 
 //Bruke konstanter fra consts i stede
 const MENU_REQUESTED = "MENU_REQUESTED";

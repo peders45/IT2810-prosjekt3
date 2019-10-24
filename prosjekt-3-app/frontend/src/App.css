@@ -1,3 +1,4 @@
+/*Main app*/
 .App {
   display: flex;
   flex-direction: row;
@@ -21,4 +22,22 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .Filter {
+    order: 1;
+  }
+  .Display {
+    order: 3;
+  }
+  .DropDown {
+    order: 2;
+  }
 }

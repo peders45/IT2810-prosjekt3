@@ -1,22 +1,15 @@
+/*Selection section with checkboxes and sliders*/
 .filterSection {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   padding: 3px;
   margin-top: 20px;
-  margin-left: 10px;
 }
 
-.filterButton{
-  margin-left: 5px;
-  background-color: red;
-  border: none;
-  color: gold;
-  padding: 8px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: bold;
-  width: 50px;
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .filterSection {
+    margin-left: 5px;
+  }
 }

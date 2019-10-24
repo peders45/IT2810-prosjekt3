@@ -1,4 +1,13 @@
+/*Display section with search bar and result display*/
 .displaySection {
   margin-top:30px;
   width: 45vw;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .displaySection{
+    margin-top: 15px;
+    margin-left: 12px;
+  }
 }

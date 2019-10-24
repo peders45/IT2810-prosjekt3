@@ -1,3 +1,13 @@
+/*Searchbar input and button*/
+.searchField {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: auto;
+  align-items: center;
+}
+
+/*Button*/
 .searchButton {
   margin-left: 5px;
   background-color: red;
@@ -9,16 +19,50 @@
   display: inline-block;
   font-size: 15px;
   font-weight: bold;
+  min-width: 10vw;
+  height: 33px;
+  margin-bottom: 10px;
 }
 
+/*Input field*/
 .input {
   font-size: 15px;
   height: 26px;
   width: 30vw;
   margin-bottom: 10px;
 }
+/*Input field on focus*/
 .input:focus {
     outline: none !important;
     border:2px solid gold;
     background-color: white;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .searchField{
+    width: 55vw;
+    margin-left:0;
+  }
+
+  .input{
+    width: 40vw;
+    height: 26px;
+    margin: 7px 0 7px 0px;
+    font-size: 12px;
+  }
+
+  .searchButton {
+    background-color: red;
+    border: none;
+    color: gold;
+    padding: 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 7px;
+    min-width: 15vw;
+  }
 }

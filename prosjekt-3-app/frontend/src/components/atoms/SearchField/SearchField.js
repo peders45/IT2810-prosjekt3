@@ -5,7 +5,7 @@ import { searchForItem }  from "../../../state/actions/searchActions";
 import { connect } from 'react-redux'
 
 
-//Input field and button to search for key words
+//Input field and button for text search
 const SearchField = ({ searchForItem }) => {
   const [ input, setInput ] = useState([]);
 

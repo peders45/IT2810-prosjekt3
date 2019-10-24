@@ -7,8 +7,6 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import StarRating from '../StarRating/StarRating';
-//import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
 
@@ -32,6 +30,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Display of search result as expandable panels, with spider graph to show some nutritional values
+
 const Result = ({menuItem}) => {
   const classes = useStyles();
   return (

@@ -6,7 +6,7 @@ import queries from '../../query';
 export function doPagination(isNext) {
   const state = store.getState();
   //endrer categories til full hvis tom
-  let categories = state.searchReducer.category
+  let categories = state.category
   if (categories.length === 0) {
     categories = ["Breakfast", "Beef_&_Pork", "Chicken_&_Fish", "Snacks_&_Sides", 
     "Salads", "Beverages", "Desserts", "Coffee_&_Tea", "Smoothies_&_Shakes"]
@@ -15,9 +15,9 @@ export function doPagination(isNext) {
   let offset = 0;
 
   if(isNext){
-      offset = state.searchReducer.offset += 9
-  }else if(state.searchReducer.offset > 9){
-    offset = state.searchReducer.offset -= 9 
+      offset = state.offset += 9
+  }else if(state.offset > 9){
+    offset = state.offset -= 9 
   }
 
   return function(dispatch) {
@@ -32,15 +32,15 @@ export function doPagination(isNext) {
     client.query({
       query: queries.GET_MENU,
       variables: {
-      first: state.searchReducer.first,
+      first: state.first,
       offset:offset,
-      searchWord: state.searchReducer.searchWord,
+      searchWord: state.searchWord,
       categories: categories, 
-      minReviewScore: state.searchReducer.sliderRating,
-      maxCalories: state.searchReducer.sliderMaxCalories,
+      minReviewScore: state.sliderRating,
+      maxCalories: state.sliderMaxCalories,
       sort: {
-        sortCategory: state.searchReducer.sortCategory,
-        isLowHigh: state.searchReducer.sortValue}       
+        sortCategory: state.sortCategory,
+        isLowHigh: state.sortValue}       
       }
     })
 

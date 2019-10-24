@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './StarRating.css';
 import '../../../App'
 import { rateMenu }  from "../../../state/actions/ratingActions";
 import { connect } from 'react-redux'
@@ -17,6 +16,8 @@ const StyledRating = withStyles({
     color: '#ff3d47',
   },
 })(Rating);
+
+//Star rating of search/filter results, added to and updated in database.
 
 const StarRating = ({rateMenu, menuID}) => {
     const [value, setValue] = useState(0);
@@ -36,20 +37,15 @@ const StarRating = ({rateMenu, menuID}) => {
             rateMenu(value, menuID)
           }}
           size="small"
-          //disabled={true}
-          //readOnly={true}
         />
       </Box>
     </div>
   );
 };
-  
+
 const mapDispatchToProps = {
   rateMenu
 };
 
-/* const mapStateToProps = (state) => ({
-  rateValue: state.ratingReducer.rateValue
-}); */
 
 export default connect(null, mapDispatchToProps)(StarRating)

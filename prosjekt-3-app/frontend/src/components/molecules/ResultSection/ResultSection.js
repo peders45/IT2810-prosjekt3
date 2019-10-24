@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import './ResultSection.css';
 import Result from '../../atoms/Result/Result';
 import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 import { doPagination }  from "../../../state/actions/paginationAction";
 
+//Component for accessing search results
 const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) => {
   useEffect(() => {searchForItem(null)}, []);
 
@@ -27,9 +27,9 @@ const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) 
 }
 
 const mapStateToProps = (state) => ({
-  menuItems: state.searchReducer.menus,
-  offset: state.searchReducer.offset,
-  count: state.searchReducer.count,
+  menuItems: state.menus,
+  offset: state.offset,
+  count: state.count,
 });
 
 const mapDispatchToProps = {

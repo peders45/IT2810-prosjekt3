@@ -1,3 +1,4 @@
+//Actions for sorting results based on the different values
 export function sortResult(sortString) {
   let sortObject = {
     sortCategory: "",
@@ -29,7 +30,7 @@ export function sortResult(sortString) {
     }
   }
   console.log(sortObject)
-  
+
   return  {
     type: "SORT",
     payload: sortObject

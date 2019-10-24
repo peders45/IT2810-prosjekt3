@@ -1,3 +1,4 @@
+//Reducer for entire site, simplifying store access
 const searchReducer = (state = {
   searchWord: "",
   menus: [],

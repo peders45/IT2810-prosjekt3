@@ -6,7 +6,7 @@
 }
 
 /*Media queries for smaller screens*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1120px) {
   .sliderSection {
     margin-left: 10px;
   }

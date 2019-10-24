@@ -1,21 +1,24 @@
-/*Color of slider thumb*/
-.MuiSlider-thumb.MuiSlider-thumbColorPrimary.PrivateValueLabel-thumb-52 {
-  color: red;
+.MuiSlider-root {
+  color: gold !important;
 }
 
-/*Color of slider track*/
-.MuiSlider-track, .MuiSlider-rail, .MuiSlider-trackInverted {
-  color: red;
+.MuiSlider-thumb {
+  font-weight: bold;
 }
 
-/*Color of inactive part of track*/
-#root > div > div.filterSection > div.sliderSection > div:nth-child(1) > span > span.MuiSlider-rail {
-  color: #b6bce2;
-  opacity: 1;
+/*Color of slider tracks*/
+#CalSlider {
+  color: gold !important;
 }
+
+#RateSlider .MuiSlider-track{
+  color: gold !important;
+  background-color: #FF5100 !important;
+}
+
 
 /*Media queries for smaller screens*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1120px) {
   #slider {
     width: 60vw;
   }

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+  background-color: red;
 }
 
 .App-logo {
@@ -25,7 +26,7 @@
 }
 
 /*Media queries for smaller screens*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1120px) {
   .App{
     display: flex;
     flex-direction: column;

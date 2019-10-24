@@ -11,6 +11,7 @@ import { searchForItem }  from "../../../state/actions/searchActions";
 const useStyles = makeStyles({
   root: {
     width: 200,
+    thumbcolor: 'black',
   },
 });
 
@@ -18,7 +19,7 @@ function valuetext(value) {
   return `${value}`;
 }
 
-const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min} ) => {
+const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min, id} ) => {
   const classes = useStyles();
 
   const handleChange = (event, value) => {
@@ -37,7 +38,7 @@ const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchFo
       <Typography id="continuous-slider" gutterBottom label="Slider">
       </Typography>
       <Slider
-        id="slider"
+        id={id}
         min={min}
         max={max}
         track={track}

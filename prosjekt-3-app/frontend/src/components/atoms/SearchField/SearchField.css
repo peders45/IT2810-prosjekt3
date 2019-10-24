@@ -10,9 +10,9 @@
 /*Button*/
 .searchButton {
   margin-left: 5px;
-  background-color: red;
+  background-color: gold;
   border: none;
-  color: gold;
+  color: black;
   padding: 8px 15px;
   text-align: center;
   text-decoration: none;
@@ -34,12 +34,12 @@
 /*Input field on focus*/
 .input:focus {
     outline: none !important;
-    border:2px solid gold;
+    border:2px solid yellow;
     background-color: white;
 }
 
 /*Media queries for smaller screens*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1120px) {
   .searchField{
     width: 55vw;
     margin-left:0;
@@ -53,15 +53,8 @@
   }
 
   .searchButton {
-    background-color: red;
-    border: none;
-    color: gold;
     padding: 4px 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 12px;
-    font-weight: bold;
     margin: 7px;
     min-width: 15vw;
   }

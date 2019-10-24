@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Result from '../../atoms/Result/Result';
+import './ResultSection.css';
 import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 import { doPagination }  from "../../../state/actions/paginationAction";

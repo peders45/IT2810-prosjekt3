@@ -1,12 +1,12 @@
 import React from 'react';
 import './Slider.css';
 import '../../../App'
-import { setSlider }  from "../../../state/actions/sliderActions";
-import sliderReducer  from "../../../state/reducers/sliderReducer";
+import { setSliderCalories, setSliderRating }  from "../../../state/actions/sliderActions";
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import { connect } from 'react-redux'
+import { searchForItem }  from "../../../state/actions/searchActions";
 
 const useStyles = makeStyles({
   root: {
@@ -18,11 +18,17 @@ function valuetext(value) {
   return `${value}`;
 }
 
-const RangeSlider = ( {sliderValue, setSlider, track, defaultValue, max, min} ) => {
+const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min} ) => {
   const classes = useStyles();
 
   const handleChange = (event, value) => {
-      setSlider(value);
+    if (sliderValue === "Total calories") {
+      setSliderCalories(value);
+    }
+    else {
+      setSliderRating(value);
+    }
+    searchForItem(searchWord)
   };
 
   return (
@@ -48,11 +54,13 @@ const RangeSlider = ( {sliderValue, setSlider, track, defaultValue, max, min} ) 
 
 
 const mapDispatchToProps = {
-  setSlider,
+  setSliderCalories,
+  setSliderRating,
+  searchForItem
  };
 
 const mapStateToProps = (state) => ({
-  sliderReducer
+  searchWord: state.searchReducer.searchWord
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RangeSlider)

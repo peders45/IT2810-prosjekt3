@@ -1,7 +1,6 @@
 import React from 'react';
 import './Result.css';
 import '../../../App';
-import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';

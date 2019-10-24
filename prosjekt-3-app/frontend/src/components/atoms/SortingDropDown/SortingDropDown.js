@@ -2,19 +2,24 @@ import React from 'react';
 import './SortingDropDown.css';
 import '../../../App'
 import { sortResult }  from "../../../state/actions/sortingActions";
-import sortingReducer  from "../../../state/reducers/sortingReducer";
 import { connect } from 'react-redux'
 import { Select } from 'nav-frontend-skjema';
+import { searchForItem }  from "../../../state/actions/searchActions";
 
-const SortingDropDown = ({ sortResult }) => {
+const SortingDropDown = ({ sortResult, searchForItem, searchWord }) => {
+  const handleChange = (event, value) => {
+    sortResult(event.target.value)
+    searchForItem(searchWord)
+  };
+
     return(
-      <div className="dropDownContainer">
-          <Select label="" onChange={(event) => sortResult(event.target.value)} bredde="s">
+      <div>
+          <Select className="dropDownContainer" label="" onChange={(event, value) => handleChange(event, value)} bredde="s">
             <option value=''>Sort by:</option>
-            <option value='calories_HL'>Calories (high-low)</option>
-            <option value='calories_LH'>Calories (low-high)</option>
-            <option value='rating_HL'>Ratings (high-low)</option>
-            <option value='rating_LH'>Ratings (low-high)</option>
+            <option value="Calories_HL">Calories (high-low)</option>
+            <option value="Calories_LH">Calories (low-high)</option>
+            <option value="score_HL">Ratings (high-low)</option>
+            <option value="score_LH">Ratings (low-high)</option>
           </Select>
       </div>
     );
@@ -22,11 +27,12 @@ const SortingDropDown = ({ sortResult }) => {
 
 
 const mapDispatchToProps = {
-  sortResult
+  sortResult,
+  searchForItem
  };
 
 const mapStateToProps = (state) => ({
-  sortingReducer
+  searchWord: state.searchReducer.searchWord
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SortingDropDown)

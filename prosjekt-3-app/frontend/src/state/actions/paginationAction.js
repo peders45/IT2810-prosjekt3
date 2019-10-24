@@ -3,7 +3,7 @@ import store from '../../store';
 import actionTypes from '../../actionTypes';
 import queries from '../../query';
 
-export function searchForItem(searchWord) {
+export function doPagination(isNext) {
   const state = store.getState();
   //endrer categories til full hvis tom
   let categories = state.category
@@ -12,18 +12,20 @@ export function searchForItem(searchWord) {
     "Salads", "Beverages", "Desserts", "Coffee_&_Tea", "Smoothies_&_Shakes"]
   }
 
+  let offset = 0;
+
+  if(isNext){
+      offset = state.offset += 9
+  }else if(state.offset > 9){
+    offset = state.offset -= 9 
+  }
+
   return function(dispatch) {
-
     dispatch({
-      type: actionTypes.PAGINATION,
-      payload: 0
-    })
-
-    dispatch({
-      type: actionTypes.SEARCHWORD,
-        payload: searchWord
-    })
-
+        type: actionTypes.PAGINATION,
+        payload: offset
+      })
+    
     dispatch({
       type: actionTypes.MENU_REQUESTED,
     })
@@ -31,8 +33,8 @@ export function searchForItem(searchWord) {
       query: queries.GET_MENU,
       variables: {
       first: state.first,
-      offset:0,
-      searchWord: searchWord,
+      offset:offset,
+      searchWord: state.searchWord,
       categories: categories, 
       minReviewScore: state.sliderRating,
       maxCalories: state.sliderMaxCalories,

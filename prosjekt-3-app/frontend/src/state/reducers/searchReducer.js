@@ -8,9 +8,17 @@ const searchReducer = (state = {
   sortCategory: "",
   sortValue: null,
   status: "",
+  first: 9,
+  offset: 0,
+  count:0,
   error: []
 }, action) => {
 switch (action.type) {
+  case "PAGINATION":
+    return state = {
+      ...state,
+      offset: action.payload
+    };
   case "SEARCHWORD":
     return state = {
       ...state,
@@ -24,7 +32,8 @@ switch (action.type) {
   case "MENU_RECEIVED":
     return state = {
       ...state,
-      menus: action.payload.data.menu,
+      menus: action.payload.data.menu.menus,
+      count: action.payload.data.menu.count,
       status: "menu received"
       };
     case "MENU_FAILED":

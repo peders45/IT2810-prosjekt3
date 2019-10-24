@@ -18,13 +18,13 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(13),
     fontWeight: theme.typography.fontWeightRegular,
     flexBasis: '45%',
     flexShrink: 0,
   },
   secondaryHeading: {
-    fontSize: theme.typography.pxToRem(12),
+    fontSize: theme.typography.pxToRem(11),
     color: theme.palette.text.secondary,
   },
   expansionPanel: {
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
+//Display of search result as expandable panels, with spider graph to show some nutritional values
 const Result = ({menuItem}) => {
   const classes = useStyles();
   return (
@@ -41,24 +41,24 @@ const Result = ({menuItem}) => {
         <ExpansionPanelSummary
           aria-controls="panel1a-content"
           id="panel1a-header">
-          <Typography className={classes.heading}>{menuItem.Item}</Typography>
-          <Typography className={classes.secondaryHeading}>
+          <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
+          <Typography className={classes.secondaryHeading} id="secondaryHeading">
             Category: {menuItem.Category}  |  Rating: {menuItem.score}🖤
           </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+        <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">
           <Typography className="info">
             <br />
             Calories: {menuItem.Calories}
-            <br /><br />
+            <br />
             Carbohydrates: {menuItem.Carbohydrates}
-            <br /><br />
+            <br />
             Protein: {menuItem.Protein}
-            <br /><br />
+            <br />
             Total fat: {menuItem.Total_Fat}
-            <br /><br />
+            <br />
             Saturated fat: {menuItem.Saturated_Fat}
-            <br /><br />
+            <br />
             Sugars: {menuItem.Sugars}
           </Typography>
           <div>

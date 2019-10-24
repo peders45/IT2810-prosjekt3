@@ -8,8 +8,8 @@ import { Select } from 'nav-frontend-skjema';
 
 const SortingDropDown = ({ sortResult }) => {
     return(
-      <div>
-          <Select className="dropDownContainer" label="" onChange={(event) => sortResult(event.target.value)} bredde="s">
+      <div className="dropDownContainer">
+          <Select label="" onChange={(event) => sortResult(event.target.value)} bredde="s">
             <option value=''>Sort by:</option>
             <option value='calories_HL'>Calories (high-low)</option>
             <option value='calories_LH'>Calories (low-high)</option>

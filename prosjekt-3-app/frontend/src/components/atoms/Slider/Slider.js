@@ -27,10 +27,11 @@ const RangeSlider = ( {sliderValue, setSlider, track, defaultValue, max, min} ) 
 
   return (
     <div className={classes.root}>
-      <label>{sliderValue}</label>
+      <label id="sliderLabel">{sliderValue}</label>
       <Typography id="continuous-slider" gutterBottom label="Slider">
       </Typography>
       <Slider
+        id="slider"
         min={min}
         max={max}
         track={track}

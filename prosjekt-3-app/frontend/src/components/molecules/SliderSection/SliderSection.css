@@ -1,4 +1,13 @@
+/*Slider section*/
 .sliderSection {
   width: 300px;
   text-align: left;
+  margin-left: 8px;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .sliderSection {
+    margin-left: 10px;
+  }
 }

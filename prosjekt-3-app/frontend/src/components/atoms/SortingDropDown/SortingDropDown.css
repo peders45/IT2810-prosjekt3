@@ -1,14 +1,31 @@
+/*Drop down menu for sorting*/
 .skjemaelement__input {
   margin: 20px;
   margin-left: 40px;
   margin-top: 28px;
-  width: 220px;
+  width: 200px;
   height: 25px;
   font-size: 14px;
 }
 
+/*On focus*/
 .skjemaelement__input:focus {
     outline: none !important;
     border:2px solid gold;
     background-color: white;
+}
+
+.dropDownContainer {
+  width: 200px;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .skjemaelement__input{
+    margin: 10px 0 0 12px;
+    width: 38vw;
+  }
+  .dropDownContainer {
+    width: 38vw;
+  }
 }

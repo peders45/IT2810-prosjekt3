@@ -1,7 +1,18 @@
+/*Checkbox section for category selection*/
 .categorySection{
     display: flex;
     flex-direction: column;
     list-style-type: none;
     margin: 10px;
     font-family: 'arial';
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  .categorySection{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

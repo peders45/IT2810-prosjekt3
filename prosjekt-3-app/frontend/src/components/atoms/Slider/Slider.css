@@ -1,12 +1,25 @@
+/*Color of slider thumb*/
 .MuiSlider-thumb.MuiSlider-thumbColorPrimary.PrivateValueLabel-thumb-52 {
   color: red;
 }
 
+/*Color of slider track*/
 .MuiSlider-track, .MuiSlider-rail, .MuiSlider-trackInverted {
   color: red;
 }
 
+/*Color of inactive part of track*/
 #root > div > div.filterSection > div.sliderSection > div:nth-child(1) > span > span.MuiSlider-rail {
   color: #b6bce2;
   opacity: 1;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  #slider {
+    width: 60vw;
+  }
+  #sliderLabel {
+    font-size: 3vw;
+  }
 }

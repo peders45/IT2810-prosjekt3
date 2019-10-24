@@ -5,6 +5,7 @@ import { checkCategory, uncheckCategory }  from "../../../state/actions/category
 import categoryReducer  from "../../../state/reducers/categoryReducer";
 import { connect } from 'react-redux'
 
+//Checkboxes for selecting categories to filter result
 const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
 
   const handleChange = (event) => {

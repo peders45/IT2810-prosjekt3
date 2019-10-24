@@ -9,10 +9,18 @@ class App extends React.Component{
   render() {
     return (
       <div className="App">
-        <FilterSection />
-        <DisplaySection />
-        <SortingDropDown />
-      
+        <div className="Filter">
+          <FilterSection/>
+        </div>
+        <div className="Display">
+          <DisplaySection/>
+        </div>
+        <div className="DropDown">
+          <SortingDropDown/>
+        </div>
+
+
+
       </div>
     );
   }

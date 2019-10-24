@@ -6,42 +6,101 @@
   margin: 5px;
 }
 
+/*Expandable list object header*/
 #panel1a-header {
   border: none;
   color: black;
   text-align: left;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 10px;
   width: 40vw;
   height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/*Category and rating*/
+#secondaryHeading {
+  margin-left: 20px;
+  min-width: 2vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Expanding part of list object*/
 #panel1a-content > div {
    background-color: #FFF3B4;
-   width: auto;
+   min-width: auto;
    margin: 0;
  }
 
+/*Text information*/
 #panel1a-content > div > p {
    font-size: 13px;
    text-align: left;
-   margin-right: 40px;
+   margin-right: 1vw;
+   min-width: 11vw;
  }
 
+/*Spider graph*/
  #panel1a-content > div > div > svg {
-   width: 260px;
+   width: 20vw;
  }
 
+/*Header for spider graph*/
 #panel1a-content > div > div > h4 {
   margin: 0;
   margin-bottom: 10px;
   font-size: 14px;
 }
 
+/*Rating section*/
 .stars {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 30px;
+  margin-left: 1vw;
+  font-size: 2vw;
+}
+
+/*Media queries for smaller screens*/
+@media screen and (max-width: 750px) {
+  #panel1a-header {
+    font-size: 2.5vh;
+    height: 20px;
+    padding-left: 10px;
+  }
+  #wrapper {
+    min-width: 75vw;
+    text-align: left;
+  }
+  #secondaryHeading {
+    display: none;
+  }
+  #mainHeading {
+    min-width: 68vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #panel1a-content > div > div > svg {
+    width: 30vw;
+  }
+  #panel1a-content > div > p {
+     font-size: 2vw;
+     text-align: left;
+     margin-right: 10px;
+     margin-top: 50px;
+   }
+   #panel1a-content > div {
+     padding: 5px;
+   }
+   #panel1a-content > div > div > h4 {
+     margin: 0;
+     margin-bottom: 8px;
+     font-size: 12px;
+   }
 }

@@ -13,7 +13,7 @@ const ResultSection = ({menuItems}) => {
 }
 
 const mapStateToProps = (state) => ({
-  menuItems: state.searchReducer.menus
+  menuItems: state.menus
 });
 
-export default connect(mapStateToProps)(ResultSection)
+export default connect(mapStateToProps, null)(ResultSection)

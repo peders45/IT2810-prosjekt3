@@ -34,7 +34,7 @@ const mapDispatchToProps = {
  };
 
 const mapStateToProps = (state) => ({
-  searchWord: state.searchReducer.searchWord
+  searchWord: state.searchWord
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SortingDropDown)

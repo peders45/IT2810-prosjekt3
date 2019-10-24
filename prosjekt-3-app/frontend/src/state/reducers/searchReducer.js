@@ -9,6 +9,7 @@ const searchReducer = (state = {
   status: "",
   first: 9,
   offset: 0,
+  count:0,
   error: []
 }, action) => {
 switch (action.type) {
@@ -30,7 +31,8 @@ switch (action.type) {
   case "MENU_RECEIVED":
     return state = {
       ...state,
-      menus: action.payload.data.menu,
+      menus: action.payload.data.menu.menus,
+      count: action.payload.data.menu.count,
       status: "menu received"
       };
     case "MENU_FAILED":

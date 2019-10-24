@@ -20,7 +20,8 @@ const queries = {
     offset: $offset
     )
   {
-    _id
+    menus{
+      _id
     Item
     Category
     score
@@ -34,6 +35,8 @@ const queries = {
     Cholesterol_percentage_Daily_Value
     Sodium_percentage_Daily_Value
     Calcium_percentage_Daily_Value
+    }
+    count
   }
 }`,
   ADD_RATING: gql`

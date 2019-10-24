@@ -13,6 +13,12 @@ export function searchForItem(searchWord) {
   }
 
   return function(dispatch) {
+
+    dispatch({
+      type: actionTypes.PAGINATION,
+      payload: 0
+    })
+
     dispatch({
       type: actionTypes.SEARCHWORD,
         payload: searchWord
@@ -25,7 +31,7 @@ export function searchForItem(searchWord) {
       query: queries.GET_MENU,
       variables: {
       first: state.searchReducer.first,
-      offset:state.searchReducer.offset,
+      offset:0,
       searchWord: searchWord,
       categories: categories, 
       minReviewScore: state.searchReducer.sliderRating,

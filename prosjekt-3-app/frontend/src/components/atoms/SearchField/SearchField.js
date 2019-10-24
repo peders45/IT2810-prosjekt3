@@ -4,11 +4,9 @@ import '../../../App'
 import { searchForItem }  from "../../../state/actions/searchActions";
 import { connect } from 'react-redux'
 
-
 //Input field and button for text search
 const SearchField = ({ searchForItem }) => {
   const [ input, setInput ] = useState([]);
-
     return(
         <div className="searchField">
           <input
@@ -23,9 +21,10 @@ const SearchField = ({ searchForItem }) => {
     );
 };
 
-
+//Dispatching actions to the store
 const mapDispatchToProps = {
   searchForItem
  };
 
+//Connect the store to this component
 export default connect(null, mapDispatchToProps)(SearchField)

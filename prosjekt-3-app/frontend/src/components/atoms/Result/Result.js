@@ -10,6 +10,7 @@ import StarRating from '../StarRating/StarRating';
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
 
+//Constant for styling of imported component
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -29,8 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-//Display of search result as expandable panels, with spider graph to show some nutritional values
-
+//Display of search result as expandable panels, with radar chart and rating
 const Result = ({menuItem}) => {
   const classes = useStyles();
   return (
@@ -63,21 +63,20 @@ const Result = ({menuItem}) => {
           <h4>Percent of recommended daily values</h4>
           <RadarChart
            captions={{
-             // columns
+             //Columns
              Total_Fat_percentage_Daily_Value: 'Total fat %',
              Cholesterol_percentage_Daily_Value: 'Cholesterol %',
              Sodium_percentage_Daily_Value: 'Sodium %',
              Calcium_percentage_Daily_Value: 'Calcium %'
            }}
            data={[
-             // data
+             //Data
              {
                data: {
                  Total_Fat_percentage_Daily_Value: menuItem.Total_Fat_percentage_Daily_Value/100,
                  Cholesterol_percentage_Daily_Value: menuItem.Cholesterol_percentage_Daily_Value/100,
                  Sodium_percentage_Daily_Value: menuItem.Sodium_percentage_Daily_Value/100,
                  Calcium_percentage_Daily_Value: menuItem.Calcium_percentage_Daily_Value/100,
-
              },
                meta: { color: "red" }
              },

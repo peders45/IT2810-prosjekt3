@@ -2,22 +2,24 @@ import React from 'react';
 import './CategoryCheckbox.css';
 import '../../../App'
 import { checkCategory, uncheckCategory }  from "../../../state/actions/categoryActions";
-import categoryReducer  from "../../../state/reducers/categoryReducer";
 import { connect } from 'react-redux'
+import { searchForItem }  from "../../../state/actions/searchActions";
 
-const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
+
+const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheckCategory, searchForItem, searchWord }) => {
 
   const handleChange = (event) => {
     if(event.target.checked) {
-      checkCategory(category);
+      checkCategory(categoryQuery);
     } else {
-      uncheckCategory(category);
+      uncheckCategory(categoryQuery);
     }
+    searchForItem(searchWord)
   };
 
     return(
       <div>
-        <label className="checkboxContainer">{category}
+        <label className="checkboxContainer">{categoryShown}
             <input className="checkbox"
                 type="checkbox"
                 onChange={(event) => handleChange(event)}
@@ -31,11 +33,12 @@ const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
 
 const mapDispatchToProps = {
   checkCategory,
-  uncheckCategory
+  uncheckCategory,
+  searchForItem
  };
 
 const mapStateToProps = (state) => ({
-  categoryReducer
+  searchWord: state.searchReducer.searchWord
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryCheckbox)

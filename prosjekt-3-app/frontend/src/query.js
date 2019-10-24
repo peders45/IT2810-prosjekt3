@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+//Constant including query and mutation for easy export
 const queries = {
   GET_MENU: gql`
   query (

@@ -3,7 +3,6 @@ import './CategorySection.css';
 import CategoryCheckbox from '../../atoms/CategoryCheckbox/CategoryCheckbox'
 
 //Section for category checkboxes
-
 const CategorySection = () => {
   return(
     <div className="categorySection">

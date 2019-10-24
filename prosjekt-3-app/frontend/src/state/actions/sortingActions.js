@@ -29,7 +29,6 @@ export function sortResult(sortString) {
       sortValue: true
     }
   }
-  console.log(sortObject)
 
   return  {
     type: "SORT",

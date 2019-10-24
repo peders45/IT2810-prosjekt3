@@ -8,6 +8,7 @@ import { ApolloProvider } from 'react-apollo';
 import store from './store'
 import client from './setupApolloClient';
 
+//Provider to handle store (state) and ApolloProvider to handle client (queries)
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Provider store={store}>

@@ -3,9 +3,10 @@ import store from '../../store';
 import actionTypes from '../../actionTypes';
 import queries from '../../query';
 
+//Actions for searching, as well as checking whether search was successful
 export function searchForItem(searchWord) {
   const state = store.getState();
-  //endrer categories til full hvis tom
+  //If empty, change categories array to include everything
   let categories = state.category
   if (categories.length === 0) {
     categories = ["Breakfast", "Beef_&_Pork", "Chicken_&_Fish", "Snacks_&_Sides", 
@@ -13,7 +14,6 @@ export function searchForItem(searchWord) {
   }
 
   return function(dispatch) {
-
     dispatch({
       type: actionTypes.PAGINATION,
       payload: 0
@@ -27,6 +27,7 @@ export function searchForItem(searchWord) {
     dispatch({
       type: actionTypes.MENU_REQUESTED,
     })
+    //Search query
     client.query({
       query: queries.GET_MENU,
       variables: {
@@ -41,7 +42,7 @@ export function searchForItem(searchWord) {
         isLowHigh: state.sortValue}       
       }
     })
-
+    //Change the state according to the query
     .then(data => dispatch({
       type: actionTypes.MENU_RECEIVED,
       payload: data

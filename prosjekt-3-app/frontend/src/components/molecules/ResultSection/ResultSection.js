@@ -5,10 +5,11 @@ import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 import { doPagination }  from "../../../state/actions/paginationAction";
 
-//Component for accessing search results
+//Component for accessing every searchresult item
 const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) => {
   useEffect(() => {searchForItem(null)}, []);
 
+  //Finding the next/previous batch of searchresults
   const checkPagination = (isNext) =>{
     if(isNext && offset + 9 < count){
       doPagination(isNext)
@@ -16,7 +17,7 @@ const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) 
       doPagination(isNext)
     }
   }
-
+  //Mapping the searchresult items, as well as including next and previous buttons
   return(
     <div className="resultSection">
       {menuItems.map((menuItem, i) =><Result menuItem={menuItem} key={"r"+i}/>)}
@@ -27,15 +28,18 @@ const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) 
   )
 }
 
+//Dispatching actions to the store
+const mapDispatchToProps = {
+  searchForItem,
+  doPagination
+ };
+ 
+//Extract data from the store
 const mapStateToProps = (state) => ({
   menuItems: state.menus,
   offset: state.offset,
   count: state.count,
 });
 
-const mapDispatchToProps = {
-  searchForItem,
-  doPagination
- };
-
+//Connect the store to this component
 export default connect(mapStateToProps, mapDispatchToProps)(ResultSection)

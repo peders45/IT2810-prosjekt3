@@ -5,9 +5,9 @@ import { checkCategory, uncheckCategory }  from "../../../state/actions/category
 import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 
-//Checkboxes to select categories of menu items, uses two actions for checking and unchecking
+//Checkboxes to select categories of menu items, uses two actions for checking and unchecking,
+//as well as one for updating the searchresults
 const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheckCategory, searchForItem, searchWord }) => {
-
   const handleChange = (event) => {
     if(event.target.checked) {
       checkCategory(categoryQuery);
@@ -16,7 +16,6 @@ const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheck
     }
     searchForItem(searchWord)
   };
-
     return(
       <div>
         <label className="checkboxContainer">{categoryShown}
@@ -30,15 +29,17 @@ const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheck
     );
 };
 
-
+//Dispatching actions to the store
 const mapDispatchToProps = {
   checkCategory,
   uncheckCategory,
   searchForItem
  };
 
+//Extract data from the store
 const mapStateToProps = (state) => ({
   searchWord: state.searchWord
 });
 
+//Connect the store to this component
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryCheckbox)

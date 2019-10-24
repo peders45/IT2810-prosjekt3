@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import searchReducer from './state/reducers/searchReducer';
 import thunk from 'redux-thunk';
 
-//Redux store for state handeling, with only one reducer for simplification
+//Redux store for state handling, with only one reducer for simplification
 const store = createStore(
   searchReducer,
   composeWithDevTools(

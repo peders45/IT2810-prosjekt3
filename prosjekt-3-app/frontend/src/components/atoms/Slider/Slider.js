@@ -8,6 +8,7 @@ import Slider from '@material-ui/core/Slider';
 import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 
+//Constant for styling of imported component
 const useStyles = makeStyles({
   root: {
     width: 200,
@@ -15,15 +16,14 @@ const useStyles = makeStyles({
   },
 });
 
+//Function to get slidervalues as text
 function valuetext(value) {
   return `${value}`;
 }
 
 //Slider for selection of value limits for ratings and calories. 
-
 const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min, id} ) => {
   const classes = useStyles();
-
   const handleChange = (event, value) => {
     if (sliderValue === "Total calories") {
       setSliderCalories(value);
@@ -33,7 +33,6 @@ const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchFo
     }
     searchForItem(searchWord)
   };
-
   return (
     <div className={classes.root}>
       <label id="sliderLabel">{sliderValue}</label>
@@ -55,15 +54,17 @@ const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchFo
   );
 }
 
-
+//Dispatching actions to the store
 const mapDispatchToProps = {
   setSliderCalories,
   setSliderRating,
   searchForItem
  };
 
+//Extract data from the store
 const mapStateToProps = (state) => ({
   searchWord: state.searchWord
 });
 
+//Connect the store to this component
 export default connect(mapStateToProps, mapDispatchToProps)(RangeSlider)

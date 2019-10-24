@@ -5,6 +5,12 @@ import queries from '../../query';
 
 export function searchForItem(searchWord) {
   const state = store.getState();
+  //endrer categories til full hvis tom
+  let categories = state.searchReducer.category
+  if (categories.length == 0) {
+    categories = ["Breakfast", "Beef_&_Pork", "Chicken_&_Fish", "Snacks_&_Sides", 
+    "Salads", "Beverages", "Desserts", "Coffee_&_Tea", "Smoothies_&_Shakes"]
+  }
 
   return function(dispatch) {
     dispatch({

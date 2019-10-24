@@ -2,7 +2,6 @@ import React from 'react';
 import './SortingDropDown.css';
 import '../../../App'
 import { sortResult }  from "../../../state/actions/sortingActions";
-import sortingReducer  from "../../../state/reducers/sortingReducer";
 import { connect } from 'react-redux'
 import { Select } from 'nav-frontend-skjema';
 
@@ -26,7 +25,7 @@ const mapDispatchToProps = {
  };
 
 const mapStateToProps = (state) => ({
-  sortingReducer
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SortingDropDown)

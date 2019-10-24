@@ -2,7 +2,6 @@ import React from 'react';
 import './CategoryCheckbox.css';
 import '../../../App'
 import { checkCategory, uncheckCategory }  from "../../../state/actions/categoryActions";
-import categoryReducer  from "../../../state/reducers/categoryReducer";
 import { connect } from 'react-redux'
 
 const CategoryCheckbox = ({ category, checkCategory, uncheckCategory }) => {
@@ -35,7 +34,7 @@ const mapDispatchToProps = {
  };
 
 const mapStateToProps = (state) => ({
-  categoryReducer
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryCheckbox)

@@ -14,12 +14,11 @@ export function searchForItem(searchWord) {
     dispatch({
       type: actionTypes.MENU_REQUESTED,
     })
-
     client.query({
       query: queries.GET_MENU,
       variables: {
       searchWord: searchWord,
-      maxCalories: state.sliderReducer.topValue       
+      maxCalories: state.searchReducer.sliderMaxCalories       
       }
     })
 

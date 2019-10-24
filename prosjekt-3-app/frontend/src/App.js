@@ -4,6 +4,7 @@ import SortingDropDown from './components/atoms/SortingDropDown/SortingDropDown'
 import FilterSection from './components/organisms/FilterSection/FilterSection'
 import DisplaySection from './components/organisms/DisplaySection/DisplaySection'
 
+//Main app component for website
 class App extends React.Component{
 
   render() {
@@ -18,9 +19,6 @@ class App extends React.Component{
         <div className="DropDown">
           <SortingDropDown/>
         </div>
-
-
-
       </div>
     );
   }

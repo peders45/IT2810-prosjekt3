@@ -5,7 +5,7 @@ import { checkCategory, uncheckCategory }  from "../../../state/actions/category
 import { connect } from 'react-redux'
 import { searchForItem }  from "../../../state/actions/searchActions";
 
-
+//Checkboxes to select categories of menu items, uses two actions for checking and unchecking
 const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheckCategory, searchForItem, searchWord }) => {
 
   const handleChange = (event) => {

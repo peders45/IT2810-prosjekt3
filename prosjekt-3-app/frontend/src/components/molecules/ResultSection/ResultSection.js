@@ -1,7 +1,8 @@
 import React from 'react';
-import './ResultSection.css';
 import Result from '../../atoms/Result/Result';
 import { connect } from 'react-redux'
+
+//Component for accessing search results
 
 const ResultSection = ({menuItems}) => {
   return(

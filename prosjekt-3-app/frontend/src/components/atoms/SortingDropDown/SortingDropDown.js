@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { Select } from 'nav-frontend-skjema';
 import { searchForItem }  from "../../../state/actions/searchActions";
 
+//Drop down menu for selection of value to sort results on.
+
 const SortingDropDown = ({ sortResult, searchForItem, searchWord }) => {
   const handleChange = (event, value) => {
     sortResult(event.target.value)

@@ -1,12 +1,14 @@
+/*Color of slider rail*/
 .MuiSlider-root {
   color: gold !important;
 }
 
+/*Color of thumb*/
 .MuiSlider-thumb {
-  font-weight: bold;
+  color: orange;
 }
 
-/*Color of slider tracks*/
+/*Color of slider track*/
 #CalSlider {
   color: gold !important;
 }

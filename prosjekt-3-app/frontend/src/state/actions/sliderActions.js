@@ -1,3 +1,4 @@
+//Action for setting calorie slider value
 export function setSliderCalories(value) {
     return  {
       type: "SLIDER_CALORIES",
@@ -5,6 +6,7 @@ export function setSliderCalories(value) {
     };
 };
 
+//Action for setting rating slider value
 export function setSliderRating(value) {
   return  {
     type: "SLIDER_RATING",

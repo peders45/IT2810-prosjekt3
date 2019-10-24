@@ -19,6 +19,8 @@ function valuetext(value) {
   return `${value}`;
 }
 
+//Slider for selection of value limits for ratings and calories. 
+
 const RangeSlider = ( {sliderValue, setSliderCalories, setSliderRating, searchForItem, searchWord, track, defaultValue, max, min, id} ) => {
   const classes = useStyles();
 

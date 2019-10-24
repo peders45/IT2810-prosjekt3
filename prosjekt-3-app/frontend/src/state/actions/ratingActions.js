@@ -3,18 +3,19 @@ import store from '../../store';
 import actionTypes from '../../actionTypes';
 import queries from '../../query';
 
+//Actions for adding and displaying ratings, as well as checking whether rating was successful
 export function rateMenu(rateValue, menuID) {
   const state = store.getState();
-  return function(dispatch) {    
+  return function(dispatch) {
     dispatch({
       type: actionTypes.RATING_REQUESTED,
     })
-    
+
     client.mutate({
       mutation: queries.ADD_RATING,
       variables: {
         score: rateValue,
-        menuItem: menuID       
+        menuItem: menuID
         }
     })
 

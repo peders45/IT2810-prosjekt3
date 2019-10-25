@@ -1,5 +1,5 @@
 //Reducer for entire site, simplifying store access
-const searchReducer = (state = {
+const reducer = (state = {
   searchWord: "",
   menus: [],
   category: [],
@@ -91,4 +91,4 @@ switch (action.type) {
 }
 };
 
-export default searchReducer;
+export default reducer;

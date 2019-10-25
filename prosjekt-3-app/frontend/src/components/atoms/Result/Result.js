@@ -41,26 +41,26 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading} id="secondaryHeading">
-            Category: {menuItem.Category}  |  Rating: {menuItem.score}🖤
+            Category: {menuItem.Category}  |  Rating: {Math.round(menuItem.score)}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">
           <Typography className="info">
             <br />
             Calories: {menuItem.Calories}
-            <br />
+            <br /><br />
             Carbohydrates: {menuItem.Carbohydrates}
-            <br />
+            <br /><br />
             Protein: {menuItem.Protein}
-            <br />
+            <br /><br />
             Total fat: {menuItem.Total_Fat}
-            <br />
+            <br /><br />
             Saturated fat: {menuItem.Saturated_Fat}
-            <br />
+            <br /><br />
             Sugars: {menuItem.Sugars}
           </Typography>
-          <div>
-          <h4>Percent of recommended daily values</h4>
+          <div id="chart">
+          <h4>Percent of recommended daily values (0-200)</h4>
           <RadarChart
            captions={{
              //Columns
@@ -73,15 +73,17 @@ const Result = ({menuItem}) => {
              //Data
              {
                data: {
-                 Total_Fat_percentage_Daily_Value: menuItem.Total_Fat_percentage_Daily_Value/100,
-                 Cholesterol_percentage_Daily_Value: menuItem.Cholesterol_percentage_Daily_Value/100,
-                 Sodium_percentage_Daily_Value: menuItem.Sodium_percentage_Daily_Value/100,
-                 Calcium_percentage_Daily_Value: menuItem.Calcium_percentage_Daily_Value/100,
+                 Total_Fat_percentage_Daily_Value: menuItem.Total_Fat_percentage_Daily_Value/200,
+                 Cholesterol_percentage_Daily_Value: menuItem.Cholesterol_percentage_Daily_Value/200,
+                 Sodium_percentage_Daily_Value: menuItem.Sodium_percentage_Daily_Value/200,
+                 Calcium_percentage_Daily_Value: menuItem.Calcium_percentage_Daily_Value/200,
              },
                meta: { color: "red" }
              },
            ]}
+           scales= {2}
            size={200}
+           dots= {true}
          />
          </div>
          <div className="stars">

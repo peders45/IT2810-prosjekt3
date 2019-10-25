@@ -14,11 +14,27 @@
   text-decoration: none;
   display: inline-block;
   font-size: 10px;
-  width: 40vw;
+  width: 45vw;
   height: 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Spider chart box */
+#chart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MuiExpansionPanelSummary-content {
+  display: flex;
+  justify-content: space-between;
+}
+/* Menu Item */
+#mainHeading {
+  display: inline-block;
 }
 
 /*Category and rating*/
@@ -68,10 +84,19 @@
 
 /*Media queries for smaller screens*/
 @media screen and (max-width: 1120px) {
-  #panel1a-header {
-    font-size: 2.5vh;
-    height: 20px;
-    padding-left: 10px;
+   #panel1a-header {
+    /* font-size: .5vh;
+    height: 20px; */
+    width: 90%;
+/*     padding-left: 10px;
+ */  }
+
+  .MuiExpansionPanelDetails-root {
+    justify-content: space-evenly;
+  } 
+
+  h4 {
+    text-align: center;
   }
 
   #wrapper {
@@ -84,15 +109,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  #secondaryHeading {
+  /* #secondaryHeading {
     display: block;
     margin-left: 10px;
     min-width: 10vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  #panel1a-content > div > div > svg {
+  } */
+  /*Spider graph*/
+ #panel1a-content > div > div > svg {
+  margin-left: 25%;
+  transform: translate(-50, 0);
+}
+  /* #panel1a-content > div > div > svg {
     width: 30vw;
   }
   #panel1a-content > div > p {
@@ -108,5 +138,5 @@
      margin: 0;
      margin-bottom: 8px;
      font-size: 12px;
-   }
+   } */
 }

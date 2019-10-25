@@ -90,7 +90,7 @@
 /*Media queries for smaller screens*/
 @media screen and (max-width: 1120px) {
    #panel1a-header {
-    width: 90%;
+    width: 80%;
   }
 
   .MuiExpansionPanelDetails-root {

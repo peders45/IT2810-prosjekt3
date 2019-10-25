@@ -19,7 +19,7 @@ const CategoryCheckbox = ({ categoryShown, categoryQuery, checkCategory, uncheck
     return(
       <div>
         <label className="checkboxContainer">{categoryShown}
-            <input className="checkbox"
+            <input value={categoryShown} className="checkbox"
                 type="checkbox"
                 onChange={(event) => handleChange(event)}
                 />

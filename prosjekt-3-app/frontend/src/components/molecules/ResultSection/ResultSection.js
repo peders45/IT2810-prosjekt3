@@ -23,8 +23,8 @@ const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) 
       {menuItems.map((menuItem, i) =><Result menuItem={menuItem} key={"r"+i}/>)}
       <div id="pagianationSection">
         <div id="pagiantionButtons">
-          <div className="nextAndPrevButton" onClick={()=>checkPagination(false)}>Previous</div>
-          <div className="nextAndPrevButton" onClick={()=>checkPagination(true)}>Next</div>
+          <div id="prevButton" className="nextAndPrevButton" onClick={()=>checkPagination(false)}>Previous</div>
+          <div id="nextButton" className="nextAndPrevButton" onClick={()=>checkPagination(true)}>Next</div>
         </div>
       <div>{offset}-{offset+menuItems.length} of {count}</div>
       </div>

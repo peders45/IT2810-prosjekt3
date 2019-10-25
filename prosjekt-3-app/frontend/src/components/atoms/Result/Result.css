@@ -28,6 +28,10 @@
   flex-direction: column;
 }
 
+#radarChart{
+  min-width: 50px;
+}
+
 .MuiExpansionPanelSummary-content {
   display: flex;
   justify-content: space-between;
@@ -61,10 +65,6 @@
    min-width: 11vw;
  }
 
-/*Spider graph*/
- #panel1a-content > div > div > svg {
-   width: 20vw;
- }
 
 /*Header for spider graph*/
 #panel1a-content > div > div > h4 {
@@ -119,8 +119,8 @@
   } */
   /*Spider graph*/
  #panel1a-content > div > div > svg {
-  margin-left: 25%;
-  transform: translate(-50, 0);
+  margin-left: 50%;
+  transform: translate(-50%, 0);
 }
   /* #panel1a-content > div > div > svg {
     width: 30vw;
@@ -139,4 +139,22 @@
      margin-bottom: 8px;
      font-size: 12px;
    } */
+}
+
+@media screen and (max-width: 630px) {
+
+  #panel1a-content > div > p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+ .MuiExpansionPanelDetails-root {
+   flex-direction: column;
+   justify-content: space-evenly;
+ } 
+
+ .stars {
+   margin-top: 10px;
+  text-align: center;
+}
 }

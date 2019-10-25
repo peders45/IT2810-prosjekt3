@@ -55,22 +55,26 @@ Vi har i tillegg til en mongoDB database satt opp og driftet en backend på den 
 ### Relevante komponenter og bibliotek
 Det er brukt flere tredjeparts komponenter fra ulike react biblioteker. Drop down menyen for sortering av resultatet er hentet fra NAV IT sitt komponentbibliotek ‘nav-frontend-skjema’, og tilpasset minimalt med CSS. I tillegg er flere av de andre funksjonelle komponentene hentet fra React rammeverket Material-UI. Ekspansjonspanelet for fremvisning av menyobjektene i liste er hentet fra dette, og det samme er Slider komponentene og Rating funksjonaliteten. radargrafen i informasjonsdelen om hvert objekt ble hentet fra npm-pakken  ‘react-svg-radar-chart’, og er også enkelt tilpasset vår data. Dette ble gjort for å spare tid på å lage egne komponenter, da vi synes komponentene som var tilgjengelige gjennom disse bibliotekene passet våre behov fint. Kilder for de nevnte komponentene er listet under:
 
-*[Drop down meny fra NAV IT](https://design.nav.no/components/select/)
-*[Ekspansjonspanel fra Material-UI](https://material-ui.com/api/expansion-panel/#expansionpanel-api)
-*[Sliderkomponent fra Material-UI](https://material-ui.com/components/slider/#slider)
-*[Rating-komponent fra Material-UI](https://material-ui.com/components/rating/#rating)
-*[Radargraf fra npm JS](https://www.npmjs.com/package/react-svg-radar-chart)
+[Drop down meny fra NAV IT](https://design.nav.no/components/select/)
+
+[Ekspansjonspanel fra Material-UI](https://material-ui.com/api/expansion-panel/#expansionpanel-api)
+
+[Sliderkomponent fra Material-UI](https://material-ui.com/components/slider/#slider)
+
+[Rating-komponent fra Material-UI](https://material-ui.com/components/rating/#rating)
+
+[Radargraf fra npm JS](https://www.npmjs.com/package/react-svg-radar-chart)
 
 ## Krav til testing
 
 ### Enhetstesting
-På grunn av dårlig tid ble ikke enhetstesting en stor prioritet da vi følte andre krav var viktigere. Normalt vil man skrive mange enhetstester, færre integrasjonstester og enda færre end-to-end tester, men i React som er bygd opp av komponenter er det mer viktig å teste hvordan komponentene fungerer sammen (integrasjonstesting) enn å teste en individuell komponent (enhetstesting). Vi har likevel skrevet noen enhetstester til blant annet App og noen actions creators. Testene kan kjøres fra frontend-mappa.
+På grunn av dårlig tid ble ikke enhetstesting en stor prioritet da vi følte andre krav var viktigere. Normalt vil man skrive mange enhetstester, færre integrasjonstester og enda færre end-to-end tester, men i React som er bygd opp av komponenter er det mer viktig å teste hvordan komponentene fungerer sammen (integrasjonstesting) enn å teste en individuell komponent (enhetstesting). Vi har likevel skrevet noen enhetstester til blant annet App og noen actions creators. Testene kan kjøres fra frontend-mappa med:
 ```console
 npm test
 ```
 
 ### End-to-end testing
-Her valgte vi å bruke Cypress da dette dekket våre behov og passet godt med bruk av Node.js. Det er også lett å debugge med dette verktøyet. Vi har skrevet tester for alle komponenter som gjør kall til backend og sjekket om staten er som forventet etter disse kallene. Testene kan kjøres fra frontend-mappa:
+Her valgte vi å bruke Cypress da dette dekket våre behov og passet godt med bruk av Node.js. Det er også lett å debugge med dette verktøyet. Vi har skrevet tester for alle komponenter som gjør kall til backend og sjekket om staten er som forventet etter disse kallene. Testene kan kjøres fra frontend-mappa med:
 ```console
 npx cypress open
 ```

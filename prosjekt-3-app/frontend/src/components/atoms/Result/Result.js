@@ -41,7 +41,7 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading} id="secondaryHeading">
-            Category: {menuItem.Category}  |  Rating: {Math.round(menuItem.score*10)/10}🖤
+            Category: {menuItem.Category}  |  Rating: {Math.round(menuItem.score)}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">
@@ -59,7 +59,7 @@ const Result = ({menuItem}) => {
             <br /><br />
             Sugars: {menuItem.Sugars}
           </Typography>
-          <div>
+          <div id="chart">
           <h4>Percent of recommended daily values (0-200)</h4>
           <RadarChart
            captions={{

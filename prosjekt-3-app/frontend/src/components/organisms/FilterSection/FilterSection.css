@@ -8,6 +8,10 @@
   width: 20vw;
 }
 
+img{
+  width: 150px;
+}
+
 /*Media queries for smaller screens*/
 @media screen and (max-width: 1120px) {
   .filterSection {

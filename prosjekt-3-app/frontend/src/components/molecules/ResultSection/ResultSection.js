@@ -7,7 +7,7 @@ import { doPagination }  from "../../../state/actions/paginationAction";
 
 //Component for accessing every searchresult item
 const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) => {
-  useEffect(() => {searchForItem(null)}, []);
+  useEffect(() => {searchForItem(null)}, [searchForItem]);
 
   //Finding the next/previous batch of searchresults
   const checkPagination = (isNext) =>{
@@ -21,9 +21,13 @@ const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) 
   return(
     <div className="resultSection">
       {menuItems.map((menuItem, i) =><Result menuItem={menuItem} key={"r"+i}/>)}
-      <div className="nextAndPrevButton" onClick={()=>checkPagination(false)}>Previous</div>
-      <div className="nextAndPrevButton" onClick={()=>checkPagination(true)}>Next</div>
+      <div id="pagianationSection">
+        <div id="pagiantionButtons">
+          <div className="nextAndPrevButton" onClick={()=>checkPagination(false)}>Previous</div>
+          <div className="nextAndPrevButton" onClick={()=>checkPagination(true)}>Next</div>
+        </div>
       <div>{offset}-{offset+menuItems.length} of {count}</div>
+      </div>
     </div>
   )
 }

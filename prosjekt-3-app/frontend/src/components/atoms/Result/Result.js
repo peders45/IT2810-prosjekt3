@@ -62,6 +62,7 @@ const Result = ({menuItem}) => {
           <div id="chart">
           <h4>Percent of recommended daily values (0-200)</h4>
           <RadarChart
+          id="radarChart"
            captions={{
              //Columns
              Total_Fat_percentage_Daily_Value: 'Total fat %',

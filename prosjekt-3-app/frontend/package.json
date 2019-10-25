@@ -1,6 +1,6 @@
 {
   "name": "prosjekt-3-app",
-  "homepage" : "http://it2810-56.idi.ntnu.no/prosjekt3",
+  "homepage": "http://it2810-56.idi.ntnu.no/prosjekt3",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -64,6 +64,9 @@
   },
   "devDependencies": {
     "cypress": "^3.5.0",
-    "redux-devtools": "^3.5.0"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "redux-devtools": "^3.5.0",
+    "redux-mock-store": "^1.5.3"
   }
 }

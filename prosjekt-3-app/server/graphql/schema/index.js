@@ -9,12 +9,12 @@ type Menu {
     Serving_Size: String
     Calories: Int
     Calories_from_Fat: Int
-    Total_Fat: Int
+    Total_Fat: Float
     Total_Fat_percentage_Daily_Value: Int
-    Saturated_Fat: Int
+    Saturated_Fat: Float
     Saturated_Fat_percentage_Daily_Value: Int
-    Trans_Fat: Int
-    Cholesterol: Int
+    Trans_Fat: Float
+    Cholesterol: Float
     Cholesterol_percentage_Daily_Value: Int
     Sodium: Int
     Sodium_percentage_Daily_Value: Int
@@ -28,8 +28,13 @@ type Menu {
     Vitamin_C_percentage_Daily_Value: Int
     Calcium_percentage_Daily_Value: Int
     Iron_percentage_Daily_Value: Int
-    score: Int
-    reviews: [Review!]
+    score: Float
+    reviews: Int
+}
+
+type Result{
+    menus: [Menu!]!
+    count: Int
 }
 
 type Review {
@@ -47,17 +52,10 @@ input SortInput {
 
 
 type Query {
-    menu(first: Int offset: Int searchWord: String categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): [Menu!]!
+    menu(first: Int offset: Int searchWord: String categories: [String!], minReviewScore: Int, maxCalories: Int, sort: SortInput ): Result!
     reviews: [Review!]!
 }
 
-input ReviewInput {
-    name: String!
-    score: Int!
-    review: String!
-    menuItem: ID!
-}
-
 type Mutation {
-    addReview(reviewInput: ReviewInput!): Review!
+    addReview(score: Int!, menuItem: String!): Menu
 }`

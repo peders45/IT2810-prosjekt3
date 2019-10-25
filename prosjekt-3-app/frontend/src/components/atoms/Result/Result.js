@@ -41,22 +41,22 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading} id="secondaryHeading">
-            Category: {menuItem.Category}  |  Rating: {menuItem.score}🖤
+            Category: {menuItem.Category}  |  Rating: {Math.round(menuItem.score*10)/10}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">
           <Typography className="info">
             <br />
             Calories: {menuItem.Calories}
-            <br />
+            <br /><br />
             Carbohydrates: {menuItem.Carbohydrates}
-            <br />
+            <br /><br />
             Protein: {menuItem.Protein}
-            <br />
+            <br /><br />
             Total fat: {menuItem.Total_Fat}
-            <br />
+            <br /><br />
             Saturated fat: {menuItem.Saturated_Fat}
-            <br />
+            <br /><br />
             Sugars: {menuItem.Sugars}
           </Typography>
           <div>

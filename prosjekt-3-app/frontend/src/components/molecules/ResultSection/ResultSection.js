@@ -7,7 +7,7 @@ import { doPagination }  from "../../../state/actions/paginationAction";
 
 //Component for accessing every searchresult item
 const ResultSection = ({menuItems, searchForItem, offset, doPagination, count}) => {
-  useEffect(() => {searchForItem(null)}, []);
+  useEffect(() => {searchForItem(null)}, [searchForItem]);
 
   //Finding the next/previous batch of searchresults
   const checkPagination = (isNext) =>{

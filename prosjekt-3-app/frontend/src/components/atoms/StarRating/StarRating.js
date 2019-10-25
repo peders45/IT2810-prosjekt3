@@ -32,7 +32,6 @@ const StarRating = ({rateMenu, menuID}) => {
           precision={1}
           value={value}
           onChange={(event, value) => {
-            console.log(menuID)
             setValue(value)
             rateMenu(value, menuID)
           }}

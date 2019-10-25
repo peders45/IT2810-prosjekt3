@@ -41,7 +41,7 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading} id="secondaryHeading">
-            Rating: {Math.round(menuItem.score)}🖤
+            Rating: {Math.floor(menuItem.score)}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">

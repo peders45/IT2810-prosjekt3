@@ -41,12 +41,14 @@ const Result = ({menuItem}) => {
           id="panel1a-header">
           <Typography className={classes.heading} id="mainHeading">{menuItem.Item}</Typography>
           <Typography className={classes.secondaryHeading} id="secondaryHeading">
-            Category: {menuItem.Category}  |  Rating: {Math.round(menuItem.score)}🖤
+            Rating: {Math.round(menuItem.score)}🖤
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.expansionPanelDetails} id="details">
           <Typography className="info">
             <br />
+            Category: {menuItem.Category}
+            <br /><br />
             Calories: {menuItem.Calories}
             <br /><br />
             Carbohydrates: {menuItem.Carbohydrates}
@@ -65,10 +67,10 @@ const Result = ({menuItem}) => {
           id="radarChart"
            captions={{
              //Columns
-             Total_Fat_percentage_Daily_Value: 'Total fat %',
-             Cholesterol_percentage_Daily_Value: 'Cholesterol %',
-             Sodium_percentage_Daily_Value: 'Sodium %',
-             Calcium_percentage_Daily_Value: 'Calcium %'
+             Total_Fat_percentage_Daily_Value: 'Total fat',
+             Cholesterol_percentage_Daily_Value: 'Cholesterol',
+             Sodium_percentage_Daily_Value: 'Sodium',
+             Calcium_percentage_Daily_Value: 'Calcium'
            }}
            data={[
              //Data

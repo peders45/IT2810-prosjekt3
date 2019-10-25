@@ -1,5 +1,6 @@
 {
   "name": "prosjekt-3-app",
+  "homepage" : "http://it2810-56.idi.ntnu.no/prosjekt3",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -28,9 +28,6 @@
   flex-direction: column;
 }
 
-#radarChart{
-  min-width: 50px;
-}
 
 .MuiExpansionPanelSummary-content {
   display: flex;
@@ -82,14 +79,19 @@
   font-size: 2vw;
 }
 
+#panel1a-content > div > div > svg {
+  min-width: 250px;
+  max-height: 190px;
+  padding: 5px;;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+
 /*Media queries for smaller screens*/
 @media screen and (max-width: 1120px) {
    #panel1a-header {
-    /* font-size: .5vh;
-    height: 20px; */
-    width: 90%;
-/*     padding-left: 10px;
- */  }
+    width: 80%;
+  }
 
   .MuiExpansionPanelDetails-root {
     justify-content: space-evenly;
@@ -109,36 +111,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  /* #secondaryHeading {
-    display: block;
-    margin-left: 10px;
-    min-width: 10vw;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  } */
-  /*Spider graph*/
- #panel1a-content > div > div > svg {
-  margin-left: 50%;
-  transform: translate(-50%, 0);
-}
-  /* #panel1a-content > div > div > svg {
-    width: 30vw;
-  }
-  #panel1a-content > div > p {
-     font-size: 2vw;
-     text-align: left;
-     margin-right: 10px;
-     margin-top: 50px;
-   }
-   #panel1a-content > div {
-     padding: 5px;
-   }
-   #panel1a-content > div > div > h4 {
-     margin: 0;
-     margin-bottom: 8px;
-     font-size: 12px;
-   } */
+ 
 }
 
 @media screen and (max-width: 630px) {
